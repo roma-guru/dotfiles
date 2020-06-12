@@ -304,15 +304,8 @@ let g:syntastic_style_warning_symbol = '⚠'
 
 " Jedi-vim ------------------------------
 
-" All these mappings work only for python code:
 " Go to definition
-let g:jedi#goto_command = ',d'
-" find ocurrences
-let g:jedi#usages_command = ',o'
-" find assignments
-let g:jedi#goto_assignments_command = ',a'
-" go to definition in new tab
-nmap ,D :tab split<CR>:call jedi#goto()<CR>
+command! PyDef call jedi#goto()
 
 " Airline ------------------------------
 
