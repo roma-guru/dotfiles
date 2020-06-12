@@ -253,18 +253,6 @@ set completeopt-=preview
 " save as sudo
 ca w!! w !sudo tee "%"
 
-let g:airline_theme = 'base16'
-if !exists('g:airline_symbols')
-   let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
-
 " when scrolling, keep cursor lines away from screen border
 set scrolloff=2
 
@@ -336,4 +324,12 @@ let g:airline#extensions#whitespace#enabled = 0
 " python 3.7 syntax for all
 let g:python_highlight_all = 1
 
+" }}}
+
+" OS specifics {{{
+if has('osx')
+    let g:airline_theme = 'base16'
+else
+    let g:airline_theme = 'angr'
+endif
 " }}}

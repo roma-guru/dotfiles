@@ -110,13 +110,13 @@ if [ $(uname) = Linux ]; then
     alias open='xdg-open'
     alias ypwd='pwd|xclip -selection clipboard'
     # Pacman
-    alias paci="pacman -S"
-    alias pacrm="pacman -R"
-    alias pacs="pacman -Ss"
-    alias pacown="pacman -So"
+    alias paci="_ pacman -S"
+    alias pacrm="_ pacman -R"
+    alias pacs="_ pacman -Ss"
+    alias pacown="_ pacman -So"
     # Yay
-    alias yayi="yay -S"
-    alias yayrm="yay -R"
+    alias yayi="_ yay -S"
+    alias yayrm="_ yay -R"
     # Snap
     alias snapi="snap install"
     alias snaprm="snap uninstall"
