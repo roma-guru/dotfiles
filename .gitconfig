@@ -1,0 +1,41 @@
+[user]
+	email = voropaev.roma@gmail.com
+	name = Roman Voropaev
+
+[push]
+  # push should only push current branch, not all branches
+  default = current
+[branch]
+  # git pull should always rebase
+  autosetuprebase = always
+
+[color]
+  ui = auto
+
+[rerere]
+	enabled = true
+[core]
+	autocrlf = input
+[diff]
+	tool = vimdiff
+
+# http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
+[url "git@github.com:"]
+  pushInsteadOf = "https://github.com/"
+  pushInsteadOf = "http://github.com/"
+  pushInsteadOf = "gh:"
+  insteadOf = "gh:"
+
+[url "git@github.com:roma-guru/"]
+  pushInsteadOf = "my:"
+  insteadOf = "my:"
+
+[url "git@gist.github.com:"]
+  pushInsteadOf = "https://gist.github.com/"
+  pushInsteadOf = "http://gist.github.com/"
+  pushInsteadOf = "gist:"
+  insteadOf = "gist:"
+[gui]
+	recentrepo = /Users/roma/Desktop/fzf
+[pull]
+	rebase = true
