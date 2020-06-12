@@ -39,5 +39,8 @@ if [ $(uname) = Darwin ]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
     # Navi testing
     source <(navi widget zsh)
+else
+    # Prompt
+    prompt fade
 fi
 

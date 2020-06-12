@@ -41,21 +41,6 @@ func ipinfo() {
     curl ipinfo.io/$1
 }
 
-# OS specifics
-if [ $(uname) = Linux ]; then
-    alias open='xdg-open'
-    alias ypwd='pwd|xclip -selection clipboard'
-else
-    alias ypwd='pwd|pbcopy'
-    # Brew
-    alias brewi="brew install"
-    alias brewup="brew update"
-    alias brewrm="brew uninstall"
-    alias brewls="brew list"
-    alias brews="brew search"
-
-fi
-
 # Python
 alias py='python3'
 alias pypy='pypy3'
@@ -119,3 +104,29 @@ alias cc='noglob cc'
 hash -d postgres-logs="/usr/local/var/log"
 hash -d postgres-conf="/usr/local/var/postgres"
 hash -d local-bin="$HOME/.local/bin"
+
+# OS specifics
+if [ $(uname) = Linux ]; then
+    alias open='xdg-open'
+    alias ypwd='pwd|xclip -selection clipboard'
+    # Pacman
+    alias paci="pacman -S"
+    alias pacrm="pacman -R"
+    alias pacs="pacman -Ss"
+    alias pacown="pacman -So"
+    # Yay
+    alias yayi="yay -S"
+    alias yayrm="yay -R"
+    # Snap
+    alias snapi="snap install"
+    alias snaprm="snap uninstall"
+else
+    alias ypwd='pwd|pbcopy'
+    # Brew
+    alias brewi="brew install"
+    alias brewup="brew update"
+    alias brewrm="brew uninstall"
+    alias brewls="brew list"
+    alias brews="brew search"
+fi
+
