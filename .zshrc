@@ -3,14 +3,6 @@ source ~/.zplug/init.zsh
 # Make sure to use double quotes
 zplug "zsh-users/zsh-history-substring-search"
 
-# Grab binaries from GitHub Releases
-# and rename with the "rename-to:" tag
-zplug "junegunn/fzf-bin", \
-    from:gh-r, \
-    as:command, \
-    rename-to:fzf, \
-    use:"*darwin*amd64*"
-
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/pip",   from:oh-my-zsh
@@ -40,10 +32,12 @@ zplug load
 # Local plugins
 for f in ~/.zsh/*.zsh; source $f;
 
-# Prompt
-eval $(/usr/local/bin/starship init zsh)
-# Iterm
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# Navi testing
-source <(navi widget zsh)
+if [ $(uname) = Darwin ]; then 
+    # Prompt
+    eval $(/usr/local/bin/starship init zsh)
+    # Iterm
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    # Navi testing
+    source <(navi widget zsh)
+fi
 

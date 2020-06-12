@@ -4,6 +4,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias func=function
 alias def=function
+alias less='bat'
 alias d='dirs -v'
 alias l='exa -hl'
 alias k='k -h'
@@ -19,19 +20,19 @@ alias desk='cd ~/Desktop'
 alias noc='nocorrect'
 alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
-alias hgrep='history | grep'
 alias mkx='chmod a+x'
 alias find='noglob find'
 alias svim="sudo vim"
-alias vimp="vim -p"
-alias vims="vim -S"
 alias vi="vim -u NONE"
 alias h="history -i"
 alias vimali='vim ~/.zsh/aliases.zsh && . ~/.zsh/aliases.zsh'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
+
+# Greps
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
+alias hgrep='history | grep'
 
 # IP info
 alias myip='ifconfig en0|grep inet' 
@@ -40,23 +41,19 @@ func ipinfo() {
     curl ipinfo.io/$1
 }
 
-# Brew
-alias brewi="brew install"
-alias brewup="brew update"
-alias brewrm="brew uninstall"
-alias brewls="brew list"
-alias brews="brew search"
-
-# Some external tools
-alias less='bat'
-alias ranger='ranger --choosedir=$HOME/.rangerdir; cd "$(cat $HOME/.rangerdir)"'
-
 # OS specifics
 if [ $(uname) = Linux ]; then
     alias open='xdg-open'
     alias ypwd='pwd|xclip -selection clipboard'
 else
     alias ypwd='pwd|pbcopy'
+    # Brew
+    alias brewi="brew install"
+    alias brewup="brew update"
+    alias brewrm="brew uninstall"
+    alias brewls="brew list"
+    alias brews="brew search"
+
 fi
 
 # Python
