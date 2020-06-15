@@ -4,7 +4,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias func=function
 alias def=function
-alias less='bat'
+alias le='bat'
 alias d='dirs -v'
 alias l='exa -hl'
 alias k='k -h'
@@ -83,7 +83,7 @@ alias djt="./manage.py test"
 alias djm="./manage.py migrate"
 alias djmm="./manage.py makemigrations"
 alias djcs="./manage.py collectstatic"
-alias djpass="./manage.py changepassword"
+alias djpasswd="./manage.py changepassword"
 alias djsuper="./manage.py createsuperuser"
 alias djsh="./manage.py shell"
 
