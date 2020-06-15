@@ -70,6 +70,9 @@ Plug 'vim-python/python-syntax'
 " Go Go
 Plug 'fatih/vim-go'
 
+" Dash integration
+Plug 'rizzatti/dash.vim'
+
 " Plugins from vim-scripts repos:
 " Search results counter
 Plug 'vim-scripts/IndexedSearch'
