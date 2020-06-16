@@ -52,9 +52,6 @@ Plug 'tpope/vim-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
-" Python autocompletion, go to definition.
-Plug 'davidhalter/jedi-vim'
-
 " Better autocompletion
 Plug 'ycm-core/YouCompleteMe'
 " Snippets manager (SnipMate), dependencies, and snippets repo
@@ -66,9 +63,6 @@ Plug 'scrooloose/syntastic'
 
 " Python 3.7
 Plug 'vim-python/python-syntax'
-
-" Go Go
-Plug 'fatih/vim-go'
 
 " Dash integration
 Plug 'rizzatti/dash.vim'
@@ -187,14 +181,12 @@ nnoremap <f10> :qa!<cr>
 augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-    autocmd FileType python nnoremap <s-f5> :tab term pudb3 %<cr>
     autocmd FileType python nnoremap <f4> :!black % && isort %<cr>
 augroup END
 augroup filetype_go
     autocmd!
-    autocmd FileType go nnoremap <f5> :GoRun<cr>
-    autocmd FileType go nnoremap <s-f5> :GoDebugStart<cr>
-    autocmd FileType go nnoremap <f4> :GoFormat<cr>
+    autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
+    autocmd FileType go nnoremap <f4> :!go fmt %<cr>
 augroup END
 augroup filetype_sh
     autocmd!
@@ -304,10 +296,10 @@ let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 
-" Jedi-vim ------------------------------
-
-" Go to definition
-command! PyDef call jedi#goto()
+" YCM  ------------------------------
+" tab for ultisnips, not you
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 " Airline ------------------------------
 
