@@ -208,20 +208,19 @@ augroup filetype_vim
 augroup END
 
 " my very magic shortcuts
-nnoremap <c-p> :FZF<cr>
-tnoremap <c-w><c-p> <C-W>:FZF<CR>
-nnoremap gb :Buffers<CR>
-tnoremap <C-W>gb <C-W>:Buffers<CR>
-nnoremap gl :Lines<CR>
-tnoremap <C-W>gl <C-W>:Lines<CR>
+nnoremap <space>. :FZF<cr>
+nnoremap <space><space> :FZF<cr>
+nnoremap <space>b :Buffers<CR>
+nnoremap <space>l :Lines<CR>
+
 nnoremap <s-f12> :term<cr>
 nnoremap <f12> :vert term<CR>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
 vnoremap <leader>y "+y
 nnoremap <leader>; execute "normal! mqA;\<esc>`q"
-nnoremap // /\v
-nnoremap <leader><space> execute "normal! ysw  "
+
 command! AirlineThemes call fzf#run({
   \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
   \               "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
