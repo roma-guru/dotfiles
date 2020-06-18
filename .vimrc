@@ -172,7 +172,7 @@ nmap <c-c> <c-w>c
 " fun keys
 nnoremap <f1> :cwindow<cr>
 nnoremap <f2> :w<cr>
-nnoremap <f5> :e<cr>
+nnoremap <f3> :e<cr>
 " insert new freq utils here!
 " ...
 nnoremap <f10> :qa!<cr>
@@ -200,7 +200,7 @@ augroup filetype_vim
 augroup END
 
 " my very magic shortcuts
-nnoremap <space>. :FZF<cr>
+nnoremap <space>. :GitFiles<cr>
 nnoremap <space><space> :FZF<cr>
 nnoremap <space>b :Buffers<CR>
 nnoremap <space>l :Lines<CR>
