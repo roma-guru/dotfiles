@@ -1,6 +1,7 @@
 # Zsh tweaks
 setopt autocd extendedglob histsavenodups chase_links noshare_history
-zmodload zsh/mathfunc
+zmodload zsh/mathfunc zsh/clone zsh/stat zsh/regex
+zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv
 autoload -Uz promptinit
 bindkey -v
