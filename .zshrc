@@ -41,7 +41,7 @@ if [ $(uname) = Darwin ]; then
     source <(navi widget zsh)
 else
     # Prompt
-    prompt fade
+    promptinit && prompt fade
 fi
 
 # Direnv
