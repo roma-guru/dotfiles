@@ -34,7 +34,7 @@ for f in ~/.zsh/*.zsh; source $f;
 
 if [ $(uname) = Darwin ]; then 
     # Prompt
-    eval $(/usr/local/bin/starship init zsh)
+    eval "$(starship init zsh)"
     # Iterm
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
     # Navi testing
@@ -43,4 +43,7 @@ else
     # Prompt
     prompt fade
 fi
+
+# Direnv
+eval "$(direnv hook zsh)"
 

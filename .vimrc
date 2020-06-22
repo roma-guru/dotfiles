@@ -182,6 +182,7 @@ augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
     autocmd FileType python nnoremap <f4> :!black % && isort %<cr>
+    autocmd FileType python nnoremap <f6> :!pytest<cr>
 augroup END
 augroup filetype_go
     autocmd!
@@ -211,7 +212,8 @@ nnoremap <f12> :vert term<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
 vnoremap <leader>y "+y
-nnoremap <leader>; execute "normal! mqA;\<esc>`q"
+nnoremap <leader>; execute "normal! A;<esc>"
+nnoremap <leader>f execute "normal! F"if<esc>"
 
 command! AirlineThemes call fzf#run({
   \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),

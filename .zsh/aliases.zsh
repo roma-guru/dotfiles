@@ -2,8 +2,10 @@
 alias _='sudo'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
 alias func=function
 alias def=function
+
 alias le='bat'
 alias d='dirs -v'
 alias l='exa -hl'
@@ -25,6 +27,7 @@ alias find='noglob find'
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
+
 alias vimali='vim ~/.zsh/aliases.zsh && . ~/.zsh/aliases.zsh'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
@@ -33,6 +36,7 @@ alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
 alias hgrep='history | grep'
+alias lgrep='!! | grep'
 
 # IP info
 alias myip='ifconfig en0|grep inet' 
@@ -45,19 +49,20 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
-alias venv='python3 -m venv'
-alias act='. *env/bin/activate'
+alias venv='python3 -m venv venv'
+alias act=". venv/bin/activate && pip install -r requirements*"
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
+alias pyclean='rm -rf **/__pycache__'
 
 # Pip
 alias pipi="pip install"
-alias pipi-test='pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple'
-alias pipi-req="pip install -r requirements.txt"
-alias pipi-dev='pip install -e .'
+alias pipi-test="pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
+alias pipi-req="pip install -r requirements*"
+alias pipi-dev="pip install -e ."
 alias piprm="pip uninstall"
-alias pipgrep='pip freeze | grep'
+alias pipgrep="pip freeze | grep"
 
 # Git
 alias git='hub'
@@ -86,6 +91,7 @@ alias djcs="./manage.py collectstatic"
 alias djpasswd="./manage.py changepassword"
 alias djsuper="./manage.py createsuperuser"
 alias djsh="./manage.py shell"
+alias djld="./manage.py loaddata"
 
 # Go
 alias gor="go run"
@@ -131,5 +137,7 @@ else
     alias brewrm="brew uninstall"
     alias brewls="brew list"
     alias brews="brew search"
+    alias brewca="brew cask"
+    alias brewcai="brew cask install"
 fi
 
