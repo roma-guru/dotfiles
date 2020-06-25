@@ -61,4 +61,4 @@
 (map! :nv "C-<up>" 'evil-window-up)
 (map! :nv "C-<down>" 'evil-window-down)
 (map! :nv "C-<left>" 'evil-window-left)
-(map! :nv "C-<left>" 'evil-window-left)
+(map! :nv "C-<right>" 'evil-window-right)
