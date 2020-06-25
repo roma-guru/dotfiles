@@ -1,5 +1,5 @@
 # Zsh tweaks
-setopt autocd extendedglob histsavenodups chase_links noshare_history
+setopt autocd autopushd extendedglob histsavenodups chase_links noshare_history
 zmodload zsh/mathfunc zsh/clone zsh/stat zsh/regex
 zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv
@@ -10,6 +10,7 @@ bindkey -M vicmd "^t" transpose-words
 bindkey -M vicmd "K" run-help
 export REPORTTIME=3
 export KEYTIMEOUT=0
+export DIRSTACKSIZE=10
 export EDITOR=vim
 
 # FZF power
