@@ -24,12 +24,15 @@ alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
+alias v="vim"
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
 
-alias vimali='vim ~/.zsh/aliases.zsh && . ~/.zsh/aliases.zsh'
-alias vimrc='vim ~/.vimrc'
+alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
+alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
+alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
+alias vimrc='vim ~/.vimrc && vim +PlugInstall +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 
 # Greps
@@ -50,16 +53,21 @@ alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
 alias venv='python3 -m venv venv'
-alias act=". venv/bin/activate && pip install -r requirements*"
+alias act=". venv/bin/activate && pip install -r requirements.txt"
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
 
+# Django additions
+alias djsuper="./manage.py createsuperuser"
+alias djadmin="djsuper --username admin --email admin@localhost"
+alias djpasswd="./manage.py changepassword"
+
 # Pip
 alias pipi="pip install"
 alias pipi-test="pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
-alias pipi-req="pip install -r requirements*"
+alias pipi-req="pip install -r requirements.txt"
 alias pipi-dev="pip install -e ."
 alias piprm="pip uninstall"
 alias pipgrep="pip freeze | grep"
@@ -81,17 +89,7 @@ alias gstal="git stash list"
 
 # Jupyter
 alias jupy="jupyter notebook"
-
-# Django
-alias djr="./manage.py runserver 8000"
-alias djt="./manage.py test"
-alias djm="./manage.py migrate"
-alias djmm="./manage.py makemigrations"
-alias djcs="./manage.py collectstatic"
-alias djpasswd="./manage.py changepassword"
-alias djsuper="./manage.py createsuperuser"
-alias djsh="./manage.py shell"
-alias djld="./manage.py loaddata"
+alias jupyc="jupyter console"
 
 # Go
 alias gor="go run"
