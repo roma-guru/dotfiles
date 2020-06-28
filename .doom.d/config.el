@@ -58,7 +58,12 @@
 (map! "<f3>" 'revert-buffer)
 (map! "<f12>" 'vterm)
 
+(map! :nv "-" 'dired-jump)
 (map! :nv "C-<up>" 'evil-window-up)
 (map! :nv "C-<down>" 'evil-window-down)
 (map! :nv "C-<left>" 'evil-window-left)
 (map! :nv "C-<right>" 'evil-window-right)
+(map! :nv "C-c" 'evil-window-delete)
+
+;; Projectile path
+(setq projectile-project-search-path '("~/Desktop"))
