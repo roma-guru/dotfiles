@@ -313,6 +313,9 @@ let g:airline#extensions#whitespace#enabled = 0
 " python 3.7 syntax for all
 let g:python_highlight_all = 1
 
+" EasyMotion like Avy
+map gs <plug>(easymotion-prefix)
+
 " }}}
 
 " OS specifics {{{
