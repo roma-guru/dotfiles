@@ -1,5 +1,6 @@
 # System
 alias _='sudo'
+alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
@@ -24,7 +25,8 @@ alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
-alias v="vim"
+
+alias e="emacs" && alias v="vim" # make peace
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
