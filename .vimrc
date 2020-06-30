@@ -320,7 +320,7 @@ map gs <plug>(easymotion-prefix)
 
 " OS specifics {{{
 if has('osx')
-    let g:airline_theme = 'base16'
+    let g:airline_theme = 'base16color'
 else
     let g:airline_theme = 'angr'
 endif
