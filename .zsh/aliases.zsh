@@ -121,7 +121,7 @@ if [ $(uname) = Linux ]; then
     alias pacupd="_ pacman -Fy"
     alias pacs="pacman -Ss"
     alias pacshow="pacman -Qi"
-    alias pacown="pacman -So"
+    alias pacown="pacman -Qo"
     alias pacclean="_ pacman -Ru"
     # Yay
     alias yayi="yay -S"

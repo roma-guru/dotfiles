@@ -55,7 +55,7 @@
 
 ;; Mapping from my vim config
 (map! "<f2>" 'save-buffer)
-(map! "<f3>" 'revert-buffer)
+(map! "<f5>" 'revert-buffer)
 (map! "<f12>" 'vterm)
 
 (map! :nv "-" 'dired-jump)
@@ -64,6 +64,15 @@
 (map! :nv "C-<left>" 'evil-window-left)
 (map! :nv "C-<right>" 'evil-window-right)
 (map! :nv "C-c" 'evil-window-delete)
+(map! :nv "C-a" 'evil-numbers/inc-at-pt)
+(map! :nv "C-S-a" 'evil-numbers/dec-at-pt)
+
+;; Org-mode imprvmnts
+(after! org
+  (map! :map org-mode-map
+        :n "M-j" 'org-metadown
+        :n "M-k" 'org-metaup))
 
 ;; Projectile path
 (setq projectile-project-search-path '("~/Desktop"))
+(setq default-directory "~/Desktop")
