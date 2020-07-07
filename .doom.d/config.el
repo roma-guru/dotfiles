@@ -56,7 +56,8 @@
 ;; Mapping from my vim config
 (map! "<f2>" 'save-buffer)
 (map! "<f5>" 'revert-buffer)
-(map! "<f12>" 'vterm)
+(map! "S-<f12>" '+vterm/toggle)
+(map! "<f12>" '+vterm/here)
 
 (map! :nv "-" 'dired-jump)
 (map! :nv "C-<up>" 'evil-window-up)

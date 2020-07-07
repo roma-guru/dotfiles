@@ -126,9 +126,13 @@ if [ $(uname) = Linux ]; then
     # Yay
     alias yayi="yay -S"
     alias yayrm="yay -R"
+    alias yays="yay -Ss"
+    alias yayshow="yay -Qi"
     # Snap
     alias snapi="snap install"
     alias snaprm="snap uninstall"
+    alias snaps="snap find"
+    alias snapshow="snap info"
 else
     alias ypwd='pwd|pbcopy'
     # Brew
