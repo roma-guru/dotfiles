@@ -176,6 +176,8 @@ nnoremap <f3> :e<cr>
 " insert new freq utils here!
 " ...
 nnoremap <f10> :qa!<cr>
+nnoremap <f12> :term<cr>
+tnoremap <f12> <c-u><c-d>
 
 " run debug keys
 augroup filetype_python
@@ -206,10 +208,7 @@ nnoremap <space><space> :FZF<cr>
 nnoremap <space>b :Buffers<CR>
 nnoremap <space>l :Lines<CR>
 
-nnoremap <s-f12> :term<cr>
-nnoremap <f12> :vert term<CR>
-
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
 vnoremap <leader>y "+y
 nnoremap <leader>; execute "normal! A;<esc>"

@@ -56,15 +56,14 @@
 ;; Mapping from my vim config
 (map! "<f2>" 'save-buffer)
 (map! "<f5>" 'revert-buffer)
-(map! "S-<f12>" '+vterm/toggle)
-(map! "<f12>" '+vterm/here)
+(map! "<f12>" '+vterm/toggle)
 
 (map! :nv "-" 'dired-jump)
 (map! :nv "C-<up>" 'evil-window-up)
 (map! :nv "C-<down>" 'evil-window-down)
 (map! :nv "C-<left>" 'evil-window-left)
 (map! :nv "C-<right>" 'evil-window-right)
-(map! :nv "C-c" 'evil-window-delete)
+(map! :nv "C-c" 'evil-window-delete)    ; not working
 (map! :nv "C-a" 'evil-numbers/inc-at-pt)
 (map! :nv "C-S-a" 'evil-numbers/dec-at-pt)
 
