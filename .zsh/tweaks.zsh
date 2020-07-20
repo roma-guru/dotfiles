@@ -18,6 +18,9 @@ source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
 
+# Stop breking autoupdates!
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Just for Fun
 [ $RANDOM -lt 7777 ] && ricksay
 

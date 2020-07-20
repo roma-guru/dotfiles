@@ -136,8 +136,8 @@ syntax on
 " show line numbers
 set number
 
-" no wrap for code
-set nowrap
+" no wrap for code by default, but if so do it wise
+set nowrap linebreak
 
 " local leader
 let maplocalleader = "_"

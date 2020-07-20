@@ -11,6 +11,7 @@ alias le='bat'
 alias d='dirs -v'
 alias l='exa -hl'
 alias k='k -h'
+alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
 alias cp='cp -R'
 alias rm='rm -r'
@@ -108,8 +109,12 @@ alias cc='noglob cc'
 
 # Bookmarked dirs
 hash -d postgres-logs="/usr/local/var/log"
-hash -d postgres-conf="/usr/local/var/postgres"
+hash -d postgres-root="/usr/local/var/postgres"
+hash -d mongo-logs="/usr/local/var/log/mongodb"
+hash -d mongo-root="/usr/local/var/mongodb"
+
 hash -d local-bin="$HOME/.local/bin"
+hash -d vim-plug="$HOME/.vim/plugged/"
 
 # OS specifics
 if [ $(uname) = Linux ]; then
@@ -143,5 +148,7 @@ else
     alias brews="brew search"
     alias brewca="brew cask"
     alias brewcai="brew cask install"
+    alias brewsvc="brew services"
+    alias brewup="brew upgrade"
 fi
 
