@@ -38,9 +38,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Terminal Vim with 256 colors colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
-
 " Hail to the Pope!
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -68,13 +65,8 @@ Plug 'vim-python/python-syntax'
 Plug 'rizzatti/dash.vim'
 
 " Plugins from vim-scripts repos:
-" Search results counter
 Plug 'vim-scripts/IndexedSearch'
-
-" XML/HTML tags navigation
 Plug 'vim-scripts/matchit.zip'
-
-" Tetris!
 " Plug 'vim-scripts/TeTrIs.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
@@ -201,6 +193,11 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+augroup autosave_folds
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent loadview
+augroup END
 
 " my very magic shortcuts
 nnoremap <space>. :GitFiles<cr>
@@ -312,8 +309,11 @@ let g:airline#extensions#whitespace#enabled = 0
 " python 3.7 syntax for all
 let g:python_highlight_all = 1
 
-" EasyMotion like Avy
+" EasyMotion ------------------
 map gs <plug>(easymotion-prefix)
+
+" Limelight -------------------------------
+let g:limelight_conceal_ctermfg = 'darkgray'
 
 " }}}
 
