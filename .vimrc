@@ -195,8 +195,8 @@ augroup filetype_vim
 augroup END
 augroup autosave_folds
     autocmd!
-    autocmd BufWinLeave * mkview
-    autocmd BufWinEnter * silent loadview
+    autocmd BufWinLeave *.* mkview
+    autocmd BufWinEnter *.* silent loadview
 augroup END
 
 " my very magic shortcuts
