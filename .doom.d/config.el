@@ -75,4 +75,6 @@
 
 ;; Projectile path
 (setq projectile-project-search-path '("~/Desktop"))
+(setq projectile-project-search-path '("~/Desktop/github100/python"))
+(setq projectile-project-search-path '("~/Desktop/github100/golang"))
 (setq default-directory "~/Desktop")
