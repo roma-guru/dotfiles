@@ -13,7 +13,7 @@ if [ $(uname) = Linux ]; then
     alias l='exa -lh'
 else
     alias l='lsd -l'
-end
+fi
 alias k='k -h'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
