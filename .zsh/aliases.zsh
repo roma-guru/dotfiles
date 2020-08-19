@@ -9,7 +9,11 @@ alias def=function
 
 alias le='bat'
 alias d='dirs -v'
-alias l='exa -hl'
+if [ $(uname) = Linux ]; then
+    alias l='exa -lh'
+else
+    alias l='lsd -l'
+end
 alias k='k -h'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
@@ -31,6 +35,9 @@ alias e="emacs" && alias v="vim" # make peace
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
+alias rr="r -2"
+alias rrr="r -3"
+alias killj="kill -9 %1"
 
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -55,7 +62,7 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
-alias venv='python3 -m venv venv'
+alias mkvenv='python3 -m venv venv'
 alias act=". venv/bin/activate && pip install -r requirements.txt"
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
@@ -63,8 +70,7 @@ alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
 
 # Django additions
-alias djsuper="./manage.py createsuperuser"
-alias djadmin="djsuper --username admin --email admin@localhost"
+alias djsuper="./manage.py createsuperuser --email $USER@localhost"
 alias djpasswd="./manage.py changepassword"
 
 # Pip
@@ -97,6 +103,7 @@ alias jupyc="jupyter console"
 # Go
 alias gor="go run"
 alias gob="go build"
+alias gobd="go build -ldflags=-compressdwarf=false"
 alias got="go test"
 alias gog="go get -v -u"
 
@@ -150,5 +157,6 @@ else
     alias brewcai="brew cask install"
     alias brewsvc="brew services"
     alias brewup="brew upgrade"
+    alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
 fi
 

@@ -199,10 +199,10 @@ augroup autosave_folds
     autocmd BufWinEnter *.* silent loadview
 augroup END
 
-" my very magic shortcuts
+" inspired by doom
 nnoremap <space>. :GitFiles<cr>
+nnoremap <space>, :Buffers<CR>
 nnoremap <space><space> :FZF<cr>
-nnoremap <space>b :Buffers<CR>
 nnoremap <space>l :Lines<CR>
 
 nnoremap <leader>ev :edit $MYVIMRC<cr>
