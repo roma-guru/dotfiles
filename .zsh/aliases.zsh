@@ -135,6 +135,7 @@ if [ $(uname) = Linux ]; then
     alias pacshow="pacman -Qi"
     alias pacown="pacman -Qo"
     alias pacclean="_ pacman -Ru"
+    alias pacfzf="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
     # Yay
     alias yayi="yay -S"
     alias yayrm="yay -R"
