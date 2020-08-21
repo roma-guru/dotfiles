@@ -148,6 +148,7 @@ if [ $(uname) = Linux ]; then
     alias snapshow="snap info"
 else
     alias ypwd='pwd|pbcopy'
+    alias ldd='otool -L'
     # Brew
     alias brewi="brew install"
     alias brewup="brew update"
