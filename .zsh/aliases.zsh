@@ -63,14 +63,17 @@ alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
 alias mkvenv='python3 -m venv venv'
-alias act=". venv/bin/activate && pip install -r requirements.txt"
+alias act='. venv/bin/activate'
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
+alias pyt='pytest'
+alias poeti='poetry install'
+alias poetu='poetry update'
 
 # Django additions
-alias djsuper="./manage.py createsuperuser --email $USER@localhost"
+alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
 alias djpasswd="./manage.py changepassword"
 
 # Pip
@@ -109,6 +112,7 @@ alias gog="go get -v -u"
 
 # Docker
 alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias docomp='docker-compose'
 
 # Calc
 function cc() python3 -c "from math import *; print($*);"

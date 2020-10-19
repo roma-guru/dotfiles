@@ -44,6 +44,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-fugitive'
 
 " Easy motion
 Plug 'easymotion/vim-easymotion'
@@ -235,6 +236,8 @@ endif
 
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#show_splits = 0
 
 " comment this line to enable autocompletion preview window
