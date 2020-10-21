@@ -71,6 +71,8 @@ alias pyclean='rm -rf **/__pycache__'
 alias pyt='pytest'
 alias poeti='poetry install'
 alias poetu='poetry update'
+alias poetact='poetry shell'
+alias pytags='ctags -R --language-force=python'
 
 # Django additions
 alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
