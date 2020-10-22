@@ -25,7 +25,10 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one-light)
+(if (eq system-type 'gnu/linux)
+    (setq doom-theme 'doom-city-lights)
+    (setq doom-theme 'doom-one-light)
+)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -56,7 +59,7 @@
 ;; Mapping from my vim config
 (map! "<f2>" 'save-buffer)
 (map! "<f5>" 'revert-buffer)
-(if (eq system-type 'linux)
+(if (eq system-type 'gnu/linux)
     (map! "<f12>" '+vterm/toggle)
     (map! "<f12>" '+eshell/toggle)
 )
@@ -77,9 +80,8 @@
         :n "M-k" 'org-metaup))
 
 ;; Projectile path
-(if (eq system-type 'linux)
+(if (eq system-type 'gnu/linux)
     (setq projectile-project-search-path '("~/Desktop/github100/python"))
-    (setq projectile-project-search-path '("~/Desktop/github100/golang"))
 )
 (setq projectile-project-search-path '("~/Desktop"))
 (setq default-directory "~/Desktop")
