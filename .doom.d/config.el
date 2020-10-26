@@ -80,8 +80,10 @@
         :n "M-k" 'org-metaup))
 
 ;; Projectile path
-(if (eq system-type 'gnu/linux)
-    (setq projectile-project-search-path '("~/Desktop/github100/python"))
+(when (eq system-type 'gnu/linux)
+    (setq projectile-project-search-path '("~/Desktop/github100/python/"))
+    (setq projectile-project-search-path '("~/Desktop/github100/golang/"))
 )
 (setq projectile-project-search-path '("~/Desktop"))
 (setq default-directory "~/Desktop")
+
