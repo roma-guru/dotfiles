@@ -1,5 +1,6 @@
 # Zsh tweaks
-setopt autocd autopushd extendedglob histsavenodups chase_links noshare_history
+setopt extendedhistory histsavenodups histfindnodups histignoredups histexpiredupsfirst histignorespace
+setopt autocd autopushd extendedglob chase_links noshare_history
 zmodload zsh/mathfunc zsh/clone zsh/stat zsh/regex
 zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv

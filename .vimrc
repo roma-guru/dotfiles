@@ -160,7 +160,6 @@ imap <c-right> <esc><c-w>l
 imap <c-left> <esc><c-w>h
 imap <c-up> <esc><c-w>k
 imap <c-down> <esc><c-w>j
-nmap <c-c> <c-w>c
 
 " fun keys
 nnoremap <f1> :cwindow<cr>
@@ -202,9 +201,11 @@ augroup END
 
 " inspired by doom
 nnoremap <space>. :GitFiles<cr>
-nnoremap <space>, :Buffers<CR>
+nnoremap <space>, :Buffers<cr>
 nnoremap <space><space> :FZF<cr>
-nnoremap <space>l :Lines<CR>
+nnoremap <space>l :Lines<cr>
+nnoremap <space>w <c-w>
+nnoremap <space>` <c-^>
 
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>

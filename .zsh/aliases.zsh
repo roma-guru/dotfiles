@@ -8,7 +8,7 @@ alias func=function
 alias def=function
 
 alias le='bat'
-alias d='dirs -v'
+alias dirs='dirs -v'
 if [ $(uname) = Linux ]; then
     alias l='exa -lh'
 else
@@ -45,6 +45,10 @@ alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimrc='vim ~/.vimrc && vim +PlugInstall +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 
+# Direnv
+alias dea="direnv allow"
+alias der="direnv reload"
+
 # Greps
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
@@ -68,7 +72,8 @@ alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
-alias pyt='pytest'
+alias pyt='pytest -x --ff'
+alias pytcov='pytest --cov-report=term'
 alias poeti='poetry install'
 alias poetu='poetry update'
 alias poetact='poetry shell'
@@ -113,6 +118,7 @@ alias got="go test"
 alias gog="go get -v -u"
 
 # Docker
+alias d='docker'
 alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 alias docomp='docker-compose'
 
