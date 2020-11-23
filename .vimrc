@@ -22,6 +22,9 @@ endif
 " Active plugins {{{ 
 call plug#begin('~/.vim/plugged')
 
+" DOOM-like which-key
+Plug 'liuchengxu/vim-which-key'
+
 " Signify + Startup
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
@@ -51,7 +54,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
 " Better autocompletion
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'kiteco/vim-plugin'
 " Snippets manager (SnipMate), dependencies, and snippets repo
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -167,7 +171,6 @@ nnoremap <f2> :w<cr>
 nnoremap <f3> :e<cr>
 " insert new freq utils here!
 " ...
-nnoremap <f10> :qa!<cr>
 nnoremap <f12> :term<cr>
 tnoremap <f12> <c-u><c-d>
 
@@ -175,13 +178,10 @@ tnoremap <f12> <c-u><c-d>
 augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-    autocmd FileType python nnoremap <f4> :!black % && isort %<cr>
-    autocmd FileType python nnoremap <f6> :!pytest<cr>
 augroup END
 augroup filetype_go
     autocmd!
     autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-    autocmd FileType go nnoremap <f4> :!go fmt %<cr>
 augroup END
 augroup filetype_sh
     autocmd!
@@ -206,6 +206,10 @@ nnoremap <space><space> :FZF<cr>
 nnoremap <space>l :Lines<cr>
 nnoremap <space>w <c-w>
 nnoremap <space>` <c-^>
+nnoremap <space>g :Gstatus<cr>
+nnoremap <space>qq :qa<cr>
+nnoremap <space>qQ :qa!<cr>
+nnoremap <space>qf :bd<cr>
 
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
@@ -221,6 +225,7 @@ command! AirlineThemes call fzf#run({
   \ 'down':    '~40%'
   \})
 nnoremap <leader>t :AirlineThemes<cr>
+nnoremap <leader>c :colorscheme<space>
 nnoremap <leader>w :set wrap!<cr>
 
 " reopen files on last position
@@ -228,7 +233,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " autosave on lost focus
 au FocusLost * silent! wa
 " %% for current file dir
-cnoremap %% <C-R>=expand('%:h').'/'<CR>
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " rip grep
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
@@ -245,6 +250,8 @@ let g:airline#extensions#tabline#show_splits = 0
 " (displays documentation related to the selected completion option)
 " disabled by default because preview makes the window flicker
 set completeopt-=preview
+set completeopt+=menuone
+set completeopt+=noinsert
 
 " save as sudo
 ca w!! w !sudo tee "%"
@@ -285,7 +292,7 @@ endif
 " Syntastic ------------------------------
 
 " show list of errors and warnings on the current file
-nmap <leader>e :Errors<CR>
+nmap <leader>e :Errors<cr>
 " check also when just opened the file
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['python3']
@@ -319,6 +326,32 @@ map gs <plug>(easymotion-prefix)
 " Limelight -------------------------------
 let g:limelight_conceal_ctermfg = 'darkgray'
 
+" Which-key --------------------
+nnoremap <silent> <space>      :<c-u>WhichKey '<space>'<cr>
+nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<cr>
+
+" Startify ---------------------
+let g:startify_custom_header = [
+         \"    =================     ===============     ===============   ========  ========",
+         \"    \\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
+         \"    ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
+         \"    || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
+         \"    ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
+         \"    || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
+         \"    ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
+         \"    || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
+         \"    ||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
+         \"    ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
+         \"    ||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
+         \"    ||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
+         \"    ||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
+         \"    ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
+         \"    ||   .=='    _-'          '-__\\._-'         '-_./__-'         `' |. /|  |   ||",
+         \"    ||.=='    _-'                                                     `' |  /==.||",
+         \"    =='    _-'                           V I M                            \\/   `==",
+         \"    \\   _-'                                                                `-_   /",
+         \"    `''                                                                      ``'",
+         \]
 " }}}
 
 " OS specifics {{{

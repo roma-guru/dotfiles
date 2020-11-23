@@ -1,5 +1,6 @@
 # System
 alias _='sudo'
+alias cd-='cd -'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -8,7 +9,7 @@ alias func=function
 alias def=function
 
 alias le='bat'
-alias dirs='dirs -v'
+alias d='dirs -v'
 if [ $(uname) = Linux ]; then
     alias l='exa -lh'
 else
@@ -31,7 +32,7 @@ alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
 
-alias e="emacs" && alias v="vim" # make peace
+alias e="emacs" && alias v="vim" # make peace not war
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
@@ -39,6 +40,7 @@ alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill -9 %1"
 
+alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -66,17 +68,12 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
-alias mkvenv='python3 -m venv venv'
-alias act='. venv/bin/activate'
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
-alias pyt='pytest -x --ff'
+alias pyt='pytest -sx --ff --pdb'
 alias pytcov='pytest --cov-report=term'
-alias poeti='poetry install'
-alias poetu='poetry update'
-alias poetact='poetry shell'
 alias pytags='ctags -R --language-force=python'
 
 # Django additions
@@ -118,7 +115,7 @@ alias got="go test"
 alias gog="go get -v -u"
 
 # Docker
-alias d='docker'
+alias doc='docker'
 alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 alias docomp='docker-compose'
 

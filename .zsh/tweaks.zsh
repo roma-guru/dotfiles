@@ -6,7 +6,7 @@ zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv
 autoload -Uz promptinit
 bindkey -v
-bindkey "^p" push-line-or-edit
+bindkey "^q" push-line-or-edit
 bindkey -M vicmd "^t" transpose-words
 bindkey -M vicmd "K" run-help
 export REPORTTIME=3

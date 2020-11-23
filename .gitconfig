@@ -18,6 +18,11 @@
 	autocrlf = input
 [diff]
 	tool = vimdiff
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
 
 # http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
 [url "git@github.com:"]
