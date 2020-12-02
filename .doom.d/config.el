@@ -89,3 +89,6 @@
 
 ;; I hate autoclosing things
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+;; Go path
+(setenv "PATH" (concat "/home/roma/go/bin:" (getenv "PATH")))
