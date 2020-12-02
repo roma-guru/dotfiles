@@ -18,6 +18,7 @@ export EDITOR=vim
 source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Stop breking autoupdates!
 export HOMEBREW_NO_AUTO_UPDATE=1

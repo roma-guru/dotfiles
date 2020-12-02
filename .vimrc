@@ -23,7 +23,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " DOOM-like which-key
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
 
 " Signify + Startup
 Plug 'mhinz/vim-signify'
@@ -53,9 +53,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
-" Better autocompletion
+" Better autocompletion, searching best
+Plug 'davidhalter/jedi-vim'
+Plug 'python-rope/ropevim'
 " Plug 'ycm-core/YouCompleteMe'
-Plug 'kiteco/vim-plugin'
+" Plug 'kiteco/vim-plugin'
+
 " Snippets manager (SnipMate), dependencies, and snippets repo
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -65,9 +68,7 @@ Plug 'scrooloose/syntastic'
 
 " Python 3.7
 Plug 'vim-python/python-syntax'
-
-" Dash integration
-Plug 'rizzatti/dash.vim'
+Plug 'alfredodeza/pytest.vim'
 
 " Plugins from vim-scripts repos:
 Plug 'vim-scripts/IndexedSearch'
@@ -206,10 +207,14 @@ nnoremap <space><space> :FZF<cr>
 nnoremap <space>l :Lines<cr>
 nnoremap <space>w <c-w>
 nnoremap <space>` <c-^>
-nnoremap <space>g :Gstatus<cr>
+
+nnoremap <space>g  :Gstatus<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
+nnoremap <space>tf :Pytest function --pdb<cr>
+nnoremap <space>tF :Pytest file --pdb<cr>
+nnoremap <space>Q  :copen<cr>
 
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>rv :source $MYVIMRC<cr>
@@ -251,7 +256,6 @@ let g:airline#extensions#tabline#show_splits = 0
 " disabled by default because preview makes the window flicker
 set completeopt-=preview
 set completeopt+=menuone
-set completeopt+=noinsert
 
 " save as sudo
 ca w!! w !sudo tee "%"
@@ -288,18 +292,15 @@ endif
 ""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
 
 " Plugins settings and mappings {{{
+" Fugitive -----------------------------------------
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Syntastic ------------------------------
 
-" show list of errors and warnings on the current file
 nmap <leader>e :Errors<cr>
-" check also when just opened the file
 let g:syntastic_check_on_open = 1
-let g:syntastic_python_checkers = ['python3']
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 0
-" custom icons (enable them if you use a patched font, and enable the previous 
-" setting)
+let g:syntastic_python_checkers = ['python', 'pep8', 'mypy']
+let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
@@ -327,8 +328,8 @@ map gs <plug>(easymotion-prefix)
 let g:limelight_conceal_ctermfg = 'darkgray'
 
 " Which-key --------------------
-nnoremap <silent> <space>      :<c-u>WhichKey '<space>'<cr>
-nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<cr>
+" nnoremap <silent> <space>      :<c-u>WhichKey '<space>'<cr>
+" nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<cr>
 
 " Startify ---------------------
 let g:startify_custom_header = [

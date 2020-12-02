@@ -72,8 +72,6 @@ alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
-alias pyt='pytest -sx --ff --pdb'
-alias pytcov='pytest --cov-report=term'
 alias pytags='ctags -R --language-force=python'
 
 # Django additions
@@ -165,7 +163,6 @@ else
     alias brewls="brew list"
     alias brews="brew search"
     alias brewca="brew cask"
-    alias brewcai="brew cask install"
     alias brewsvc="brew services"
     alias brewup="brew upgrade"
     alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
