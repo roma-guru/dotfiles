@@ -87,3 +87,5 @@
 (setq projectile-project-search-path '("~/Desktop"))
 (setq default-directory "~/Desktop")
 
+;; I hate autoclosing things
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)

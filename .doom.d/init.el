@@ -75,7 +75,7 @@
        lsp
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
-       ;;taskrunner        ; taskrunner for all your projects
+       taskrunner        ; taskrunner for all your projects
 
        :lang
        cc                ; C/C++/Obj-C madness

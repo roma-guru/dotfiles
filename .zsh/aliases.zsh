@@ -118,8 +118,9 @@ alias got="go test"
 alias gog="go get -v -u"
 
 # Docker
-alias d='docker'
-alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias doc='docker'
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docker-rm-images='docker rmi $(docker images -q)'
 alias docomp='docker-compose'
 
 # Calc
@@ -142,7 +143,7 @@ if [ $(uname) = Linux ]; then
     # Pacman
     alias paci="_ pacman -S"
     alias pacrm="_ pacman -Rs"
-    alias pacupd="_ pacman -Fy"
+    alias pacupd="_ pacman -Sy"
     alias pacs="pacman -Ss"
     alias pacshow="pacman -Qi"
     alias pacown="pacman -Qo"
