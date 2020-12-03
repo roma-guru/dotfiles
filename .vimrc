@@ -1,7 +1,23 @@
-﻿"   ┏┳┓╻ ╻   ╻ ╻╻┏┳┓┏━┓┏━╸
-"   ┃┃┃┗┳┛   ┃┏┛┃┃┃┃┣┳┛┃
-"   ╹ ╹ ╹    ┗┛ ╹╹ ╹╹┗╸┗━╸
-"
+﻿"    =================     ===============     ===============   ========  ========",
+"    \\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //",
+"    ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||",
+"    || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
+"    ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
+"    || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||",
+"    ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||",
+"    || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||",
+"    ||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||",
+"    ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||",
+"    ||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||",
+"    ||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||",
+"    ||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||",
+"    ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||",
+"    ||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||",
+"    ||.=='    _-'                                                     `' |  /==.||",
+"    =='    _-'                           V I M                            \/   `==",
+"    \   _-'                                                                `-_   /",
+"    `''                                                                      ``'",
+
 " Vim-plug initialization, don't modify! {{{
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
@@ -17,7 +33,10 @@ endif
 if vim_plug_just_installed
     :execute 'source '.fnameescape(vim_plug_path)
 endif
-"<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>}}}
+" }}}
+
+"_.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._
+""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
 
 " Active plugins {{{ 
 call plug#begin('~/.vim/plugged')
@@ -84,7 +103,7 @@ if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
     :PlugInstall
 endif
-"<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>}}}
+"}}}
 
 " Vim settings and mappings {{{
 
@@ -222,6 +241,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>; execute "normal! A;<esc>"
 nnoremap <leader>f execute "normal! F"if<esc>"
 
+let g:airline_theme = 'base16color'
 command! AirlineThemes call fzf#run({
   \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
   \               "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
@@ -355,10 +375,3 @@ let g:startify_custom_header = [
          \]
 " }}}
 
-" OS specifics {{{
-if has('osx')
-    let g:airline_theme = 'base16color'
-else
-    let g:airline_theme = 'angr'
-endif
-" }}}
