@@ -19,8 +19,8 @@
 (doom! :input
 
        :completion
-       company           ; the ultimate code completion backend
-       ivy               ; a search engine for love and life
+       (company +childframe)           ; the ultimate code completion backend
+       (ivy +childframe +icons +prescient)               ; a search engine for love and life
 
        :ui
        doom              ; what makes DOOM look the way it does
@@ -63,7 +63,7 @@
        vterm             ; the best terminal emulation in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
+       (syntax +childframe)              ; tasing you for every semicolon you forget
 
        :tools
        ;;debugger          ; FIXME stepping through code, to help you add bugs
