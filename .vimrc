@@ -49,7 +49,7 @@ Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 
 " Code and files fuzzy finder
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Distraction free
@@ -250,7 +250,7 @@ command! AirlineThemes call fzf#run({
   \ 'down':    '~40%'
   \})
 nnoremap <leader>t :AirlineThemes<cr>
-nnoremap <leader>c :colorscheme<space>
+nnoremap <leader>c :Colors<cr>
 nnoremap <leader>w :set wrap!<cr>
 
 " reopen files on last position
@@ -315,11 +315,14 @@ endif
 " Fugitive -----------------------------------------
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" FZF -----------------------
+let g:fzf_preview_window = []
+
 " Syntastic ------------------------------
 
 nmap <leader>e :Errors<cr>
 let g:syntastic_check_on_open = 1
-let g:syntastic_python_checkers = ['python', 'pep8', 'mypy']
+let g:syntastic_python_checkers = ['python', 'Pylint', 'mypy']
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
