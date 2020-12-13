@@ -16,7 +16,6 @@ zplug "zdharma/zui"
 zplug "supercrabtree/k"
 zplug "Tarrasch/zsh-bd"
 zplug "molovo/revolver", as:command, use:revolver
-zplug "ChrisPenner/copy-pasta"
 
 # Completions
 zplug "ikhomutov/zsh-django"
@@ -40,8 +39,6 @@ if [ $(uname) = Darwin ]; then
     eval "$(starship init zsh)"
     # Iterm
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-    # Navi testing
-    source <(navi widget zsh)
 else
     # Prompt
     promptinit && prompt fade

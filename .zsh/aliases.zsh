@@ -73,6 +73,9 @@ alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
 alias pytags='ctags -R --language-force=python'
+def pypkg() {
+    mkdir $1 && touch $1/__init__.py
+}
 
 # Django additions
 alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
