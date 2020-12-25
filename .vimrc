@@ -45,7 +45,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'liuchengxu/vim-which-key'
 
 " Signify + Startup
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 
 " Code and files fuzzy finder
@@ -55,6 +55,7 @@ Plug 'junegunn/fzf.vim'
 " Distraction free
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-peekaboo'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -67,6 +68,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 
 " Easy motion
 Plug 'easymotion/vim-easymotion'
@@ -83,7 +85,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 " Python and other languages code checker
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 
 " Python 3.7
 Plug 'vim-python/python-syntax'
@@ -215,8 +217,8 @@ augroup filetype_vim
 augroup END
 augroup autosave_folds
     autocmd!
-    autocmd BufWinLeave *.* mkview
-    autocmd BufWinEnter *.* silent loadview
+    autocmd BufWinLeave *.* silent! mkview
+    autocmd BufWinEnter *.* silent! loadview
 augroup END
 
 " inspired by doom
@@ -231,15 +233,13 @@ nnoremap <space>g  :Gstatus<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
-nnoremap <space>tf :Pytest function --pdb<cr>
-nnoremap <space>tF :Pytest file --pdb<cr>
+nnoremap <space>tf :Pytest function<cr>
+nnoremap <space>ta :Pytest file<cr>
 nnoremap <space>Q  :copen<cr>
 
-nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>rv :source $MYVIMRC<cr>
+nnoremap gev :edit $MYVIMRC<cr>
+nnoremap grv :source $MYVIMRC<cr>
 vnoremap <leader>y "+y
-nnoremap <leader>; execute "normal! A;<esc>"
-nnoremap <leader>f execute "normal! F"if<esc>"
 
 let g:airline_theme = 'base16color'
 command! AirlineThemes call fzf#run({
@@ -251,7 +251,8 @@ command! AirlineThemes call fzf#run({
   \})
 nnoremap <leader>t :AirlineThemes<cr>
 nnoremap <leader>c :Colors<cr>
-nnoremap <leader>w :set wrap!<cr>
+nnoremap <leader>q :History:<cr>
+nnoremap <leader>t :Tags<cr>
 
 " reopen files on last position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -259,11 +260,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 au FocusLost * silent! wa
 " %% for current file dir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-" rip grep
-if executable("rg")
-    set grepprg=rg\ --vimgrep\ --no-heading
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
 
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -318,16 +314,16 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " FZF -----------------------
 let g:fzf_preview_window = []
 
-" Syntastic ------------------------------
-
+" ALE  ------------------------------
 nmap <leader>e :Errors<cr>
-let g:syntastic_check_on_open = 1
-let g:syntastic_python_checkers = ['python', 'Pylint', 'mypy']
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
+let g:ale_linters = {'python': ['python', 'Pylint', 'mypy', 'flake8']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['isort', 'autopep8'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
 
 " YCM  ------------------------------
 " tab for ultisnips, not you
@@ -335,12 +331,10 @@ let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 
 " Airline ------------------------------
-
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#whitespace#enabled = 0
 
 " Python ----------------------
-
 " python 3.7 syntax for all
 let g:python_highlight_all = 1
 

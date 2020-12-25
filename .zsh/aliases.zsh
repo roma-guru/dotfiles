@@ -35,6 +35,7 @@ alias find='noglob find'
 alias e="emacs" && alias v="vim" # make peace not war
 alias svim="sudo vim"
 alias vi="vim -u NONE"
+alias vo="vim -O"
 alias h="history -i"
 alias rr="r -2"
 alias rrr="r -3"
@@ -103,6 +104,7 @@ alias gcld1="git clone --depth 1"
 alias gsuba="git submodule add"
 alias gsubaf="git submodule add -f"
 alias gstal="git stash list"
+alias gdno="git diff --name-only"
 
 # Jupyter
 alias jupy="jupyter notebook"
