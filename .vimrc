@@ -38,7 +38,7 @@ endif
 "_.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._
 ""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
 
-" Active plugins {{{ 
+" Active plugins {{{
 call plug#begin('~/.vim/plugged')
 
 " DOOM-like which-key
@@ -77,6 +77,7 @@ Plug 'justinmk/vim-sneak'
 " Better autocompletion, searching best
 Plug 'davidhalter/jedi-vim'
 Plug 'python-rope/ropevim'
+Plug 'relastle/vim-nayvy'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'kiteco/vim-plugin'
 
@@ -252,7 +253,7 @@ command! AirlineThemes call fzf#run({
 nnoremap <leader>t :AirlineThemes<cr>
 nnoremap <leader>c :Colors<cr>
 nnoremap <leader>q :History:<cr>
-nnoremap <leader>t :Tags<cr>
+nnoremap <leader>T :Tags<cr>
 
 " reopen files on last position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -316,10 +317,10 @@ let g:fzf_preview_window = []
 
 " ALE  ------------------------------
 nmap <leader>e :Errors<cr>
-let g:ale_linters = {'python': ['python', 'Pylint', 'mypy', 'flake8']}
+let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['isort', 'autopep8'],
+\   'python': ['nayvy#ale_fixer', 'isort', 'autopep8'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
@@ -371,4 +372,3 @@ let g:startify_custom_header = [
          \"    `''                                                                      ``'",
          \]
 " }}}
-
