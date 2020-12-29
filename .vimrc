@@ -188,6 +188,9 @@ imap <c-left> <esc><c-w>h
 imap <c-up> <esc><c-w>k
 imap <c-down> <esc><c-w>j
 
+" universal quit
+nmap Q <c-w>c
+
 " fun keys
 nnoremap <f1> :cwindow<cr>
 nnoremap <f2> :w<cr>
@@ -234,9 +237,13 @@ nnoremap <space>g  :Gstatus<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
+nnoremap <space>Q  :copen<cr>
+
+" pytest
 nnoremap <space>tf :Pytest function<cr>
 nnoremap <space>ta :Pytest file<cr>
-nnoremap <space>Q  :copen<cr>
+nnoremap <space>tt :Pytest project verbose<cr>
+nnoremap <space>te :Pytest error<cr>
 
 nnoremap gev :edit $MYVIMRC<cr>
 nnoremap grv :source $MYVIMRC<cr>
@@ -311,6 +318,7 @@ endif
 " Plugins settings and mappings {{{
 " Fugitive -----------------------------------------
 autocmd BufReadPost fugitive://* set bufhidden=delete
+command Merge Gvdiffsplit!
 
 " FZF -----------------------
 let g:fzf_preview_window = []

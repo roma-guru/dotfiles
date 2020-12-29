@@ -45,7 +45,7 @@ alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
-alias vimrc='vim ~/.vimrc && vim +PlugInstall +qa'
+alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 
 # Direnv
