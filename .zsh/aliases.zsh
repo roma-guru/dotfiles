@@ -59,7 +59,7 @@ alias hgrep='history | grep'
 alias lgrep='!! | grep'
 
 # IP info
-alias myip='ifconfig en0|grep inet' 
+alias myip='ifconfig en0|grep inet'
 alias myip-ext='curl ifconfig.pro'
 func ipinfo() {
     curl ipinfo.io/$1
@@ -121,6 +121,7 @@ alias gog="go get -v -u"
 alias doc='docker'
 alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 alias docomp='docker-compose'
+alias kub='kubectl'
 
 # Calc
 function cc() python3 -c "from math import *; print($*);"
@@ -172,4 +173,3 @@ else
     alias brewup="brew upgrade"
     alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
 fi
-
