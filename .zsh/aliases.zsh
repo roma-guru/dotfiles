@@ -38,7 +38,7 @@ alias killj="kill -9 %1"
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
-alias vimrc='vim ~/.vimrc && vim +PlugInstall +qa'
+alias vimrc='vim ~/.SpaceVim.d/init.toml'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 
 # Greps
@@ -48,7 +48,7 @@ alias hgrep='history | grep'
 alias lgrep='!! | grep'
 
 # IP info
-alias myip='ifconfig en0|grep inet' 
+alias myip='ifconfig wlp2s0|grep inet'
 alias myip-ext='curl ifconfig.pro'
 func ipinfo() {
     curl ipinfo.io/$1

@@ -23,6 +23,8 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
+    autocomplete_parens = false
+    relativenumber = false
 
 # Enable autocomplete layer
 [[layers]]
