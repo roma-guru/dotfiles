@@ -5,16 +5,8 @@
         "command": "workbench.action.files.save"
     },
     {
-        "key": "cmd+s",
-        "command": "-workbench.action.files.save"
-    },
-    {
         "key": "shift+cmd+e",
         "command": "workbench.view.explorer"
-    },
-    {
-        "key": "shift+cmd+e",
-        "command": "-workbench.view.explorer"
     },
     {
         "key": "ctrl+left",
@@ -37,16 +29,8 @@
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal"
-    },
-    {
         "key": "f3",
         "command": "workbench.action.files.reload"
-    },
-    {
-        "key": "cmd+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "cmd+s",
@@ -56,16 +40,6 @@
 		"key": "space",
 		"command": "vspacecode.space",
 		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
-	},
-	{
-		"key": "tab",
-		"command": "extension.vim_tab",
-		"when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
-	},
-	{
-		"key": "tab",
-		"command": "-extension.vim_tab",
-		"when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
 	},
 	{
 		"key": "x",
@@ -116,11 +90,6 @@
 		"command": "-magit.show-refs"
 	},
 	{
-		"key": "y",
-		"command": "vspacecode.showMagitRefMenu",
-		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode == 'Normal'"
-	},
-	{
 		"key": "ctrl+j",
 		"command": "workbench.action.quickOpenSelectNext",
 		"when": "inQuickOpen"
@@ -166,17 +135,8 @@
 		"when": "inFileBrowser"
 	},
 	{
-		"key": "cmd+p",
-		"command": "workbench.action.quickOpenNavigateNextInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
-	{
-		"key": "cmd+p",
-		"command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
-	{
 		"key": "-",
+		"command": "extension.dired.open",
 		"when": "editorTextFocus && !inDebugRepl && vim.mode == 'Normal'"
 	},
 ]

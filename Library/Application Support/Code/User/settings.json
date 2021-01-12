@@ -14,7 +14,7 @@
     "editor.renderWhitespace": "none",
     "window.zoomLevel": 0,
     "git.autofetch": true,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Pleasure (rainglow)",
     "codespaces.accountProvider": "Microsoft",
     "terminal.integrated.shell.osx": "/bin/zsh",
     "liveshare.allowGuestTaskControl": true,
@@ -224,7 +224,7 @@
 					"command": "workbench.action.showAllEditors"
 				},
 				{
-					"key": "d",
+					"key": "c",
 					"name": "Close active buffer",
 					"type": "command",
 					"command": "workbench.action.closeActiveEditor"
@@ -2714,7 +2714,20 @@
 		}
 	],
 	"python.showStartPage": true,
-	"kite.showWelcomeNotificationOnStartup": false
+	"kite.showWelcomeNotificationOnStartup": false,
+	"vim.enableNeovim": true,
+	"vim.neovimPath": "/usr/local/bin/nvim",
 
+	"[python]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true,
+			"source.fixAll": true
+		}
+	},
+	"python.defaultInterpreterPath": "python3",
+	"python.languageServer": "Pylance",
+	"python.insidersChannel": "weekly",
+	"python.testing.pytestEnabled": true,
+	"terminal.integrated.sendKeybindingsToShell": true
 
 }
