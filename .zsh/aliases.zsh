@@ -137,39 +137,15 @@ hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 
 # OS specifics
-if [ $(uname) = Linux ]; then
-    alias open='xdg-open'
-    alias ypwd='pwd|xclip -selection clipboard'
-    # Pacman
-    alias paci="_ pacman -S"
-    alias pacrm="_ pacman -Rs"
-    alias pacupd="_ pacman -Fy"
-    alias pacs="pacman -Ss"
-    alias pacshow="pacman -Qi"
-    alias pacown="pacman -Qo"
-    alias pacclean="_ pacman -Ru"
-    alias pacfzf="pacman -Ss | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-    # Yay
-    alias yayi="yay -S"
-    alias yayrm="yay -R"
-    alias yays="yay -Ss"
-    alias yayshow="yay -Qi"
-    # Snap
-    alias snapi="snap install"
-    alias snaprm="snap uninstall"
-    alias snaps="snap find"
-    alias snapshow="snap info"
-else
-    alias ypwd='pwd|pbcopy'
-    alias ldd='otool -L'
-    # Brew
-    alias brewi="brew install"
-    alias brewup="brew update"
-    alias brewrm="brew uninstall"
-    alias brewls="brew list"
-    alias brews="brew search"
-    alias brewca="brew cask"
-    alias brewsvc="brew services"
-    alias brewup="brew upgrade"
-    alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
-fi
+alias ypwd='pwd|pbcopy'
+alias ldd='otool -L'
+# Brew
+alias brewi="brew install"
+alias brewup="brew update"
+alias brewrm="brew uninstall"
+alias brewls="brew list"
+alias brews="brew search"
+alias brewca="brew cask"
+alias brewsvc="brew services"
+alias brewup="brew upgrade"
+alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
