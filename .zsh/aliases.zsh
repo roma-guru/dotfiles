@@ -83,12 +83,12 @@ alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localh
 alias djpasswd="./manage.py changepassword"
 
 # Pip
-alias pipi="pip install"
-alias pipi-test="pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
-alias pipi-req="pip install -r requirements.txt"
-alias pipi-dev="pip install -e ."
-alias piprm="pip uninstall"
-alias pipgrep="pip freeze | grep"
+alias pipi="pip3 install"
+alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
+alias pipi-req="pip3 install -r requirements.txt"
+alias pipi-dev="pip3 install -e ."
+alias piprm="pip3 uninstall"
+alias pipgrep="pip3 freeze | grep"
 
 # Git
 alias git='hub'
@@ -127,25 +127,20 @@ alias kub='kubectl'
 function cc() python3 -c "from math import *; print($*);"
 alias cc='noglob cc'
 
-# Bookmarked dirs
-hash -d postgres-logs="/usr/local/var/log"
-hash -d postgres-root="/usr/local/var/postgres"
-hash -d mongo-logs="/usr/local/var/log/mongodb"
-hash -d mongo-root="/usr/local/var/mongodb"
-
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
+hash -d go-home="$HOME/go"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
 # Brew
 alias brewi="brew install"
+alias breica="brew install --cask"
 alias brewup="brew update"
 alias brewrm="brew uninstall"
 alias brewls="brew list"
 alias brews="brew search"
-alias brewca="brew cask"
 alias brewsvc="brew services"
 alias brewup="brew upgrade"
 alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
