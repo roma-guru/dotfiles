@@ -10,11 +10,7 @@ alias def=function
 
 alias le='bat'
 alias d='dirs -v'
-if [ $(uname) = Linux ]; then
-    alias l='exa -lh'
-else
-    alias l='lsd -l'
-fi
+alias l='exa -lh'
 alias k='k -h'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'

@@ -19,7 +19,7 @@ alias alerev='alembic revision --autogenerate -m'
 alias proj_name="basename $PWD"
 alias newmr="lab mr create origin dev -d -s -a roman.voropaev -m"
 alias tox="tox && say success || say fail"
-alias xot="flake8 $(proj_name) tests && pylint $(proj_name) && mypy $(proj_name)"
+alias xot="flake8 $(proj_name) tests && pylint --disable=E1136 $(proj_name) && mypy $(proj_name)"
 alias dbsh="pgcli -h localhost -p 5436 -u $(proj_name) $(proj_name)"
 
 alias work="docomp up -d minio postgres redis"
