@@ -13,11 +13,8 @@ path=( /usr/local/sbin /usr/local/bin $path )
 
 # go path
 export GO111MODULE=on
-if [[ $(uname) == Darwin ]]; then
-    export GOPATH=~/Library/Go
-fi
+export GOPATH=~/go
 path=( $GOPATH/bin $path )
 
 # ruby for jekyll
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-

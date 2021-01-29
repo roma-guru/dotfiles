@@ -194,6 +194,7 @@ nmap Q <c-w>c
 " fun keys
 nnoremap <f1> :cwindow<cr>
 nnoremap <f2> :w<cr>
+nnoremap <c-s> :w<cr>
 nnoremap <f3> :e<cr>
 " insert new freq utils here!
 " ...

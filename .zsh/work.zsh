@@ -24,3 +24,5 @@ alias dbsh="pgcli -h localhost -p 5436 -u $(proj_name) $(proj_name)"
 
 alias work="docomp up -d minio postgres redis"
 alias nowork="docomp down"
+
+export JIRA_API_TOKEN='IAEQAE8gerZ9UC7ONFOR6A62'
