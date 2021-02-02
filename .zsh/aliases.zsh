@@ -132,7 +132,7 @@ alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
 # Brew
 alias brewi="brew install"
-alias breica="brew install --cask"
+alias brewica="brew install --cask"
 alias brewup="brew update"
 alias brewrm="brew uninstall"
 alias brewls="brew list"
