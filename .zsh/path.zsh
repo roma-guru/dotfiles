@@ -8,7 +8,8 @@ export PYTHONASYNCIODEBUG=1
 # admin tools
 path=( /usr/local/sbin /usr/local/bin $path )
 
-# go path
+# go & rust paths
 export GO111MODULE=on
 export GOPATH=~/go
-path=( $GOPATH/bin $path )
+path=( $GOPATH/bin $HOME/.cargo/bin $path )
+
