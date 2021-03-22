@@ -74,6 +74,10 @@ def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
 
+# Anaconda
+alias conda-act='. ~/anaconda3/bin/activate'
+alias conda-deact='conda deactivate'
+
 # Django additions
 alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
 alias djpasswd="./manage.py changepassword"
@@ -119,10 +123,6 @@ alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images 
 alias docomp='docker-compose'
 alias kub='kubectl'
 
-# Calc
-function cc() python3 -c "from math import *; print($*);"
-alias cc='noglob cc'
-
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
@@ -130,6 +130,7 @@ hash -d go-home="$HOME/go"
 # OS specifics
 alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
+
 # Brew
 alias brewi="brew install"
 alias brewica="brew install --cask"

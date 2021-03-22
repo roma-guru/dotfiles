@@ -4,6 +4,7 @@ setopt autocd autopushd extendedglob chase_links noshare_history
 zmodload zsh/mathfunc zsh/clone zsh/stat zsh/regex
 zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv
+autoload -U zcalc
 autoload -Uz promptinit
 bindkey -v
 bindkey "^e" push-line-or-edit
