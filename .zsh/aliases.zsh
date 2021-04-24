@@ -37,12 +37,14 @@ alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill -9 %1"
 
+alias vimzsh="vim ~/.zsh"
 alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
+alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 
 # Direnv
 alias dea="direnv allow"
@@ -141,3 +143,9 @@ alias brews="brew search"
 alias brewsvc="brew services"
 alias brewup="brew upgrade"
 alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
+
+# URLs w/o quoting!
+alias curl="nog curl"
+alias xh="nog xh"
+alias http="nog http"
+

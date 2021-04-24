@@ -192,14 +192,11 @@ imap <c-down> <esc><c-w>j
 nmap Q <c-w>c
 
 " fun keys
-nnoremap <f1> :cwindow<cr>
-nnoremap <f2> :w<cr>
 nnoremap <c-s> :w<cr>
-nnoremap <f3> :e<cr>
 " insert new freq utils here!
 " ...
-nnoremap <f12> :term<cr>
-tnoremap <f12> <c-u><c-d>
+nmap <c-`> :term<cr>
+tmap <c-`> <c-u><c-d>
 
 " run debug keys
 augroup filetype_python
@@ -329,7 +326,7 @@ nmap <leader>e :Errors<cr>
 let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['nayvy#ale_fixer', 'isort', 'autopep8'],
+\   'python': ['isort', 'black'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
