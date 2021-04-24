@@ -1,5 +1,5 @@
 [user]
-	email = voropaev.roma@gmail.com
+	email = rvoropaev@quantumbrains.com
 	name = Roman Voropaev
 
 [push]
@@ -16,6 +16,7 @@
 	enabled = true
 [core]
 	autocrlf = input
+	excludesfile = /Users/roma/.gitignore_global
 [diff]
 	tool = vimdiff
 [merge]
@@ -26,8 +27,6 @@
 
 # http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
 [url "git@github.com:"]
-  pushInsteadOf = "https://github.com/"
-  pushInsteadOf = "http://github.com/"
   pushInsteadOf = "gh:"
   insteadOf = "gh:"
 
@@ -35,12 +34,15 @@
   pushInsteadOf = "my:"
   insteadOf = "my:"
 
-[url "git@gist.github.com:"]
-  pushInsteadOf = "https://gist.github.com/"
-  pushInsteadOf = "http://gist.github.com/"
-  pushInsteadOf = "gist:"
-  insteadOf = "gist:"
-[gui]
-	recentrepo = /Users/roma/Desktop/fzf
+[url "git@gitlab.acc.run:acc/"]
+  pushInsteadOf = "acc:"
+  insteadOf = "acc:"
+
 [pull]
-	rebase = true
+  rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
