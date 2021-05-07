@@ -92,6 +92,9 @@ Plug 'dense-analysis/ale'
 Plug 'vim-python/python-syntax'
 Plug 'alfredodeza/pytest.vim'
 
+" Golang
+Plug 'fatih/vim-go'
+
 " Plugins from vim-scripts repos:
 Plug 'vim-scripts/IndexedSearch'
 Plug 'vim-scripts/matchit.zip'
@@ -223,6 +226,9 @@ augroup autosave_folds
     autocmd BufWinEnter *.* silent! loadview
 augroup END
 
+" autosave on window focus changed
+autocmd WinLeave :w<cr>
+
 " inspired by doom
 nnoremap <space>. :GitFiles<cr>
 nnoremap <space>, :Buffers<cr>
@@ -350,10 +356,6 @@ map gs <plug>(easymotion-prefix)
 
 " Limelight -------------------------------
 let g:limelight_conceal_ctermfg = 'darkgray'
-
-" Which-key --------------------
-" nnoremap <silent> <space>      :<c-u>WhichKey '<space>'<cr>
-" nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<cr>
 
 " Startify ---------------------
 let g:startify_custom_header = [
