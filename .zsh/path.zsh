@@ -4,6 +4,7 @@ path=( . ~/.local/bin $path )
 
 # python path
 export PYTHONASYNCIODEBUG=1
+path=( ~/anaconda3/condabin $path )
 
 # admin tools
 path=( /usr/local/sbin /usr/local/bin $path )

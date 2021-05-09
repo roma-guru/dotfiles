@@ -77,14 +77,19 @@ def pypkg() {
 }
 
 # Anaconda
-alias conda-act='. ~/anaconda3/bin/activate'
-alias conda-deact='conda deactivate'
+def conda-act() {
+    eval $(conda shell.zsh activate $1)
+}
+def conda-deact() {
+    eval $(conda shell.zsh deactivate)
+}
 
 # Django additions
 alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
 alias djpasswd="./manage.py changepassword"
 
 # Pip
+alias pip="pip3"
 alias pipi="pip3 install"
 alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
 alias pipi-req="pip3 install -r requirements.txt"
