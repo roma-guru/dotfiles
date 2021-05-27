@@ -87,6 +87,7 @@ def conda-deact() {
 # Django additions
 alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
 alias djpasswd="./manage.py changepassword"
+alias djck="./manage.py check"
 
 # Pip
 alias pip="pip3"
