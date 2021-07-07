@@ -8,6 +8,9 @@ alias ....='cd ../../..'
 alias func=function
 alias def=function
 
+def trash {
+    mv $1 ~/.Trash
+}
 alias le='bat'
 alias d='dirs -v'
 alias l='exa -lh'
