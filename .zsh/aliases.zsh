@@ -27,7 +27,7 @@ alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
 
-alias e="emacs" && alias v="nvim" # make peace
+alias e="emacs" && alias v="vim" # make peace
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias h="history -i"
