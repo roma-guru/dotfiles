@@ -1,4 +1,5 @@
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # Make sure to use double quotes
 zplug "zsh-users/zsh-history-substring-search"
@@ -36,7 +37,7 @@ zplug load
 # Local plugins
 for f in ~/.zsh/*.zsh; source $f;
 
-if [ $(uname) = Darwin ]; then 
+if [ $(uname) = Darwin ]; then
     # Prompt
     eval "$(starship init zsh)"
     # Iterm
@@ -48,4 +49,3 @@ fi
 
 # Direnv
 eval "$(direnv hook zsh)"
-

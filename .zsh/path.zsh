@@ -1,6 +1,11 @@
-# set PATH so it includes user's private bin if it exists
 declare -U path
-path=( . ~/.local/bin $path )
+
+# homebrew fix
+export HOMEBREW_PREFIX=/opt/homebrew
+path=( /opt/homebrew/bin $path )
+
+# set PATH so it includes user's private bin if it exists
+path=( ~/.local/bin $path )
 
 # python path
 export PYTHONASYNCIODEBUG=1
