@@ -1,11 +1,11 @@
 #!/bin/zsh
 brew install coreutils cmake git
 brew install vim zsh starship zplug
-brew install bat ranger direnv fzf exa fd ripgrep 
+brew install bat ranger direnv fzf exa fd ripgrep
 brew install htop glances
 
 brew install golang rust python
-brew install pgcli micro hub
+brew install pgcli micro gh
 brew install jq yq
 brew install httpie xh curlie
 
@@ -16,4 +16,6 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
 brew install postgresql redis
+brew tap mongodb/brew
+brew install mongodb-community
 brew install docker kubernetes-cli minikube lazydocker
