@@ -1,5 +1,5 @@
 [user]
-	email = rvoropaev@quantumbrains.com
+	email = voropaev.roma@gmail.com
 	name = Roman Voropaev
 
 [push]
@@ -42,7 +42,7 @@
   rebase = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

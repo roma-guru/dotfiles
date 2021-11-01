@@ -60,7 +60,7 @@ alias hgrep='history | grep'
 alias lgrep='!! | grep'
 
 # IP info
-alias myip='ifconfig en0|grep inet'
+alias myip='ifconfig en0 | grep "inet\s" | cut -f 2 -d " "'
 alias myip-ext='curl ifconfig.pro'
 func ipinfo() {
     curl ipinfo.io/$1
@@ -157,4 +157,3 @@ alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bin
 alias curl="nog curl"
 alias xh="nog xh"
 alias http="nog http"
-
