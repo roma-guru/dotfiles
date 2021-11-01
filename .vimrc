@@ -1,24 +1,4 @@
-﻿"    =================     ===============     ===============   ========  ========",
-"    \\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //",
-"    ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||",
-"    || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-"    ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-"    || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||",
-"    ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||",
-"    || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||",
-"    ||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||",
-"    ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||",
-"    ||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||",
-"    ||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||",
-"    ||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||",
-"    ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||",
-"    ||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||",
-"    ||.=='    _-'                                                     `' |  /==.||",
-"    =='    _-'                           V I M                            \/   `==",
-"    \   _-'                                                                `-_   /",
-"    `''                                                                      ``'",
-
-" Vim-plug initialization, don't modify! {{{
+﻿" Vim-plug initialization, don't modify! {{{
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
 
@@ -40,13 +20,6 @@ endif
 
 " Active plugins {{{
 call plug#begin('~/.vim/plugged')
-
-" DOOM-like which-key
-" Plug 'liuchengxu/vim-which-key'
-
-" Signify + Startup
-" Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
 
 " Code and files fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -74,10 +47,9 @@ Plug 'tpope/vim-projectionist'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
-" Better autocompletion, searching best
+" Advanced completions
 Plug 'davidhalter/jedi-vim'
-Plug 'python-rope/ropevim'
-Plug 'relastle/vim-nayvy'
+" Plug 'python-rope/ropevim'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'kiteco/vim-plugin'
 
@@ -198,22 +170,21 @@ nmap Q <c-w>c
 nnoremap <c-s> :w<cr>
 " insert new freq utils here!
 " ...
-nmap <c-`> :term<cr>
-tmap <c-`> <c-u><c-d>
 
-" run debug keys
-augroup filetype_python
-    autocmd!
-    autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-augroup END
-augroup filetype_go
-    autocmd!
-    autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-augroup END
-augroup filetype_sh
-    autocmd!
-    autocmd FileType sh nnoremap <f5> :!zsh %<cr>
-augroup END
+" no sense on touchbar 😔
+" " run debug keys
+" augroup filetype_python
+"     autocmd!
+"     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
+" augroup END
+" augroup filetype_go
+"     autocmd!
+"     autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
+" augroup END
+" augroup filetype_sh
+"     autocmd!
+"     autocmd FileType sh nnoremap <f5> :!zsh %<cr>
+" augroup END
 
 " autofolding vimrc
 augroup filetype_vim
@@ -237,7 +208,7 @@ nnoremap <space>l :Lines<cr>
 nnoremap <space>w <c-w>
 nnoremap <space>` <c-^>
 
-nnoremap <space>g  :Gstatus<cr>
+nnoremap <space>g  :Git<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
@@ -245,12 +216,11 @@ nnoremap <space>Q  :copen<cr>
 
 " pytest
 nnoremap <space>tf :Pytest function<cr>
-nnoremap <space>ta :Pytest file<cr>
-nnoremap <space>tt :Pytest project verbose<cr>
+nnoremap <space>tF :Pytest file<cr>
+nnoremap <space>tp :Pytest project verbose<cr>
 nnoremap <space>te :Pytest error<cr>
 
-nnoremap gev :edit $MYVIMRC<cr>
-nnoremap grv :source $MYVIMRC<cr>
+" universal copypaste
 vnoremap <leader>y "+y
 
 let g:airline_theme = 'base16color'
@@ -329,14 +299,15 @@ let g:fzf_preview_window = []
 
 " ALE  ------------------------------
 nmap <leader>e :Errors<cr>
-let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
+" let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
+let g:ale_linters = {'python': ['flake8']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort', 'black'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
+let g:ale_sign_warning = '·'
 
 " YCM  ------------------------------
 " tab for ultisnips, not you
@@ -357,26 +328,4 @@ map gs <plug>(easymotion-prefix)
 " Limelight -------------------------------
 let g:limelight_conceal_ctermfg = 'darkgray'
 
-" Startify ---------------------
-let g:startify_custom_header = [
-         \"    =================     ===============     ===============   ========  ========",
-         \"    \\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-         \"    ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-         \"    || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-         \"    ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-         \"    || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-         \"    ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-         \"    || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-         \"    ||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-         \"    ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-         \"    ||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-         \"    ||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-         \"    ||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-         \"    ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-         \"    ||   .=='    _-'          '-__\\._-'         '-_./__-'         `' |. /|  |   ||",
-         \"    ||.=='    _-'                                                     `' |  /==.||",
-         \"    =='    _-'                           V I M                            \\/   `==",
-         \"    \\   _-'                                                                `-_   /",
-         \"    `''                                                                      ``'",
-         \]
 " }}}
