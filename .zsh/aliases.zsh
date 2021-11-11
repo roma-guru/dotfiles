@@ -48,6 +48,7 @@ alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
+alias reload='. ~/.zshrc'
 
 # Direnv
 alias dea="direnv allow"

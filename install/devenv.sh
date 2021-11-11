@@ -3,7 +3,7 @@
 brew install coreutils cmake git gawk
 brew install vim zsh starship zplug
 brew install bat ranger direnv fzf exa fd ripgrep
-brew install htop glances
+brew install htop glances gotop
 
 # Dev langs
 brew install golang rust python node
@@ -15,6 +15,9 @@ brew install httpie xh curlie
 brew install ngrok magic-wormhole
 brew install clipy --cask
 
+# Sublimes
+brew install sublime-text sublime-merge --cask
+
 # Doom Emacs
 brew tap railwaycat/emacsmacport
 brew install emacs-mac --with-modules
@@ -23,7 +26,7 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 
 # DBs
-brew install postgresql redis
+brew install postgresql redis pg_top
 brew tap mongodb/brew
 brew install mongodb-community
 

@@ -49,3 +49,5 @@ fi
 
 # Direnv
 eval "$(direnv hook zsh)"
+# zsh fm
+func chpwd() { k }
