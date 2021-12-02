@@ -203,6 +203,7 @@ autocmd WinLeave :w<cr>
 " inspired by doom
 nnoremap <space>. :GitFiles<cr>
 nnoremap <space>, :Buffers<cr>
+nnoremap <space>bb :Buffers<cr>
 nnoremap <space><space> :FZF<cr>
 nnoremap <space>l :Lines<cr>
 nnoremap <space>w <c-w>
@@ -212,6 +213,7 @@ nnoremap <space>g  :Git<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
+nnoremap <space>bd :bd<cr>
 nnoremap <space>Q  :copen<cr>
 
 " pytest

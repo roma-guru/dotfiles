@@ -94,7 +94,8 @@ alias djpasswd="./manage.py changepassword"
 alias djck="./manage.py check"
 
 # Pip
-alias pip="pip3"
+alias pip=pip3
+alias pip3="py -m pip"
 alias pipi="pip3 install"
 alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
 alias pipi-req="pip3 install -r requirements.txt"
@@ -131,8 +132,9 @@ alias gog="go get -v -u"
 
 # Docker
 alias doc='docker'
-alias docker-rm-all='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
-alias docomp='docker-compose'
+alias docker-rmrf='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docomp='docker compose'
 alias kub='kubectl'
 
 hash -d local-bin="$HOME/.local/bin"
