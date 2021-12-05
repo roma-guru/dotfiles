@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
 	{
 		"key": "shift+cmd+e",
@@ -87,5 +86,5 @@
 	{
 		"key": "ctrl+up",
 		"command": "workbench.action.focusAboveGroup"
-	},
+	}
 ]

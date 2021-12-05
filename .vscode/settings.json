@@ -9,8 +9,6 @@
 	"breadcrumbs.enabled": false,
 	"editor.renderWhitespace": "trailing",
 	"git.autofetch": true,
-	"liveshare.allowGuestTaskControl": true,
-	"python.pythonPath": "/Users/roma/anaconda3/envs/quantumbrains/bin/python",
 	"vim.easymotion": true,
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
@@ -79,7 +77,7 @@
 	"extensions.ignoreRecommendations": true,
 	"workbench.editor.showTabs": false,
 	"settingsSync.ignoredSettings": [
-		"workbench.colorTheme",
+		"workbench.colorTheme"
 	],
 	"yaml.schemas": {
         "file:///Users/roma/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
@@ -87,14 +85,6 @@
 	"atlascode.jira.enabled": true,
 	"atlascode.bitbucket.enabled": false,
 	"atlascode.jira.jqlList": [
-		{
-			"id": "6627cbe7-612e-4f7a-b16d-5f4a7a0a08fe",
-			"enabled": true,
-			"name": "My win-tasks Issues",
-			"query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-			"siteId": "5cbdcab2-7ffc-413b-88e8-a08a848df45e",
-			"monitor": true
-		}
 	],
 	"atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{issueKey}}}",
 	"atlascode.jira.statusbar.showProduct": false,
@@ -117,35 +107,5 @@
     "jupyter.askForKernelRestart": false,
 	"editor.autoClosingBrackets": "never",
 	"editor.autoClosingQuotes": "never",
-    "python.terminal.activateEnvironment": false,
-	"debug.allowBreakpointsEverywhere": true,
-	"notebook.cellToolbarLocation": {
-		"default": "right",
-		"jupyter-notebook": "left"
-	},
-    "redhat.telemetry.enabled": true,
-    "files.associations": {
-        "*.COBOL*": "cobol",
-        "*.COB*": "cobol",
-        "*.COBCOPY*": "cobol",
-        "*.COPYBOOK*": "cobol",
-        "*.COPY*": "cobol",
-        "*.PL1*": "pl1",
-        "*.PLI*": "pl1",
-        "*.INC*": "pl1",
-        "*.INCLUDE*": "pl1",
-        "*.JCL*": "jcl",
-        "*.ASM*": "hlasm",
-        "*.ASSEMBLE*": "hlasm",
-        "*.HLASM*": "hlasm",
-        "*.HLA*": "hlasm"
-    },
-    "json.schemas": [
-        {
-            "fileMatch": [
-                "/zapp.json"
-            ],
-            "url": "file:///Users/roma/.vscode/extensions/ibm.zopeneditor-1.4.1/resources/zapp-schema-0.0.2.json"
-        }
-    ]
+    "python.terminal.activateEnvironment": true
 }
