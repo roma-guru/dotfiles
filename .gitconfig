@@ -1,6 +1,6 @@
 [user]
-	email = voropaev.roma@gmail.com
-	name = Roman Voropaev
+	email = ravoropaev@sbercloud.ru
+	name = Воропаев Роман
 
 [push]
   # push should only push current branch, not all branches
@@ -9,42 +9,8 @@
   # git pull should always rebase
   autosetuprebase = always
 
-[color]
-  ui = auto
-
 [rerere]
 	enabled = true
 [core]
 	autocrlf = input
 	excludesfile = /Users/roma/.gitignore_global
-[diff]
-	tool = vimdiff
-[merge]
-    tool = vimdiff
-    conflictstyle = diff3
-[mergetool]
-    prompt = false
-
-# http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
-[url "git@github.com:"]
-  pushInsteadOf = "gh:"
-  insteadOf = "gh:"
-
-[url "git@github.com:roma-guru/"]
-  pushInsteadOf = "my:"
-  insteadOf = "my:"
-
-[url "git@gitlab.acc.run:acc/"]
-  pushInsteadOf = "acc:"
-  insteadOf = "acc:"
-
-[pull]
-  rebase = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/roma/.stCommitMsg

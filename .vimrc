@@ -1,333 +1,101 @@
-﻿" Vim-plug initialization, don't modify! {{{
-let vim_plug_just_installed = 0
-let vim_plug_path = expand('~/.vim/autoload/plug.vim')
+" sensible.vim - Defaults everyone can agree on
+" Maintainer:   Tim Pope <http://tpo.pe/>
+" Version:      1.2
 
-if !filereadable(vim_plug_path)
-    echo "Installing Vim-plug..."
-    echo ""
-    silent !mkdir -p ~/.vim/autoload
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let vim_plug_just_installed = 1
+if exists('g:loaded_sensible') || &compatible
+  finish
+else
+  let g:loaded_sensible = 'yes'
 endif
 
-if vim_plug_just_installed
-    :execute 'source '.fnameescape(vim_plug_path)
+if has('autocmd')
+  filetype plugin indent on
 endif
-" }}}
-
-"_.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._
-""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
-
-" Active plugins {{{
-call plug#begin('~/.vim/plugged')
-
-" Code and files fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Distraction free
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-peekaboo'
-
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Hail to the Pope!
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-
-" Easy motion
-Plug 'easymotion/vim-easymotion'
-Plug 'justinmk/vim-sneak'
-
-" Advanced completions
-Plug 'davidhalter/jedi-vim'
-" Plug 'python-rope/ropevim'
-" Plug 'ycm-core/YouCompleteMe'
-" Plug 'kiteco/vim-plugin'
-
-" Snippets manager (SnipMate), dependencies, and snippets repo
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
-" Python and other languages code checker
-Plug 'dense-analysis/ale'
-
-" Python 3.7
-Plug 'vim-python/python-syntax'
-Plug 'alfredodeza/pytest.vim'
-
-" Golang
-Plug 'fatih/vim-go'
-
-" Plugins from vim-scripts repos:
-Plug 'vim-scripts/IndexedSearch'
-Plug 'vim-scripts/matchit.zip'
-" Plug 'vim-scripts/TeTrIs.vim'
-
-" Tell vim-plug we finished declaring plugins, so it can load them
-call plug#end()
-" }}}
-
-" Install plugins the first time vim runs {{{
-if vim_plug_just_installed
-    echo "Installing Bundles, please ignore key map error messages"
-    :PlugInstall
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
 endif
-"}}}
 
-" Vim settings and mappings {{{
+" Use :help 'option' to see the documentation for the given option.
 
-" no vi-compatible
-set nocompatible magic
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
 
-" allow plugins by file type (required for plugins!)
-filetype plugin on
-filetype indent on
+set nrformats-=octal
 
-" splits
-set splitbelow splitright
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
 
-" enable folding
-set foldmethod=indent
-set foldlevel=9
-
-" tabs and spaces handling
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set backspace=2
-
-" mouse
-set mouse=a
-
-" tab length exceptions on some file types
-augroup short_indents
-    autocmd!
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-augroup END
-
-" always show status bar
-set ls=2
-
-" incremental search
 set incsearch
-" highlighted search results
-set hlsearch
-
-" syntax highlight on
-syntax on
-
-" show line numbers
-set number
-
-" no wrap for code by default, but if so do it wise
-set nowrap linebreak
-
-" local leader
-let maplocalleader = "_"
-
-" netrw
-let g:netrw_winsize = 25
-" let g:netrw_liststyle = 3
-
-" tab navigation mappings
-map <c-s-right> :tabn<cr>
-tmap <c-s-right> <c-w>:tabn<cr>
-imap <c-s-right> <esc>:tabn<cr>
-map <c-s-left> :tabp<cr>
-tmap <c-s-left> <c-w>:tabp<cr>
-imap <c-s-left> <esc>:tabp<cr>
-
-" navigate windows with ctrl+arrows
-map <c-right> <c-w>l
-map <c-left> <c-w>h
-map <c-up> <c-w>k
-map <c-down> <c-w>j
-tmap <c-right> <c-w>l
-tmap <c-left> <c-w>h
-tmap <c-up> <c-w>k
-tmap <c-down> <c-w>j
-imap <c-right> <esc><c-w>l
-imap <c-left> <esc><c-w>h
-imap <c-up> <esc><c-w>k
-imap <c-down> <esc><c-w>j
-
-" universal quit
-nmap Q <c-w>c
-
-" fun keys
-nnoremap <c-s> :w<cr>
-" insert new freq utils here!
-" ...
-
-" no sense on touchbar 😔
-" " run debug keys
-" augroup filetype_python
-"     autocmd!
-"     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-" augroup END
-" augroup filetype_go
-"     autocmd!
-"     autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-" augroup END
-" augroup filetype_sh
-"     autocmd!
-"     autocmd FileType sh nnoremap <f5> :!zsh %<cr>
-" augroup END
-
-" autofolding vimrc
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-augroup autosave_folds
-    autocmd!
-    autocmd BufWinLeave *.* silent! mkview
-    autocmd BufWinEnter *.* silent! loadview
-augroup END
-
-" autosave on window focus changed
-autocmd WinLeave :w<cr>
-
-" inspired by doom
-nnoremap <space>. :GitFiles<cr>
-nnoremap <space>, :Buffers<cr>
-nnoremap <space>bb :Buffers<cr>
-nnoremap <space><space> :FZF<cr>
-nnoremap <space>l :Lines<cr>
-nnoremap <space>w <c-w>
-nnoremap <space>` <c-^>
-
-nnoremap <space>g  :Git<cr>
-nnoremap <space>qq :qa<cr>
-nnoremap <space>qQ :qa!<cr>
-nnoremap <space>qf :bd<cr>
-nnoremap <space>bd :bd<cr>
-nnoremap <space>Q  :copen<cr>
-
-" pytest
-nnoremap <space>tf :Pytest function<cr>
-nnoremap <space>tF :Pytest file<cr>
-nnoremap <space>tp :Pytest project verbose<cr>
-nnoremap <space>te :Pytest error<cr>
-
-" universal copypaste
-vnoremap <leader>y "+y
-
-let g:airline_theme = 'base16color'
-command! AirlineThemes call fzf#run({
-  \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
-  \               "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-  \ 'sink':    'AirlineTheme',
-  \ 'options': '+m --prompt="AirlineThemes> "',
-  \ 'down':    '~40%'
-  \})
-nnoremap <leader>t :AirlineThemes<cr>
-nnoremap <leader>c :Colors<cr>
-nnoremap <leader>q :History:<cr>
-nnoremap <leader>T :Tags<cr>
-
-" reopen files on last position
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-" autosave on lost focus
-au FocusLost * silent! wa
-" %% for current file dir
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
-" airline tabs
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#tabline#show_splits = 0
-
-" comment this line to enable autocompletion preview window
-" (displays documentation related to the selected completion option)
-" disabled by default because preview makes the window flicker
-set completeopt-=preview
-set completeopt+=menuone
-
-" save as sudo
-ca w!! w !sudo tee "%"
-
-" when scrolling, keep cursor lines away from screen border
-set scrolloff=2
-
-" autocompletion of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-set wildmode=list:longest
-
-" better backup, swap and undos storage
-set directory=~/.vim/dirs/tmp     " directory to place swap files in
-set backup                        " make backup files
-set backupdir=~/.vim/dirs/backups " where to put backup files
-set undofile                      " persistent undos - undo after you re-open the file
-set undodir=~/.vim/dirs/undos
-set viminfo+=n~/.vim/dirs/viminfo
-let g:yankring_history_dir = '~/.vim/dirs/'
-
-" create needed directories if they don't exist
-if !isdirectory(&backupdir)
-    call mkdir(&backupdir, "p")
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
-if !isdirectory(&directory)
-    call mkdir(&directory, "p")
+
+set laststatus=2
+set ruler
+set wildmenu
+
+if !&scrolloff
+  set scrolloff=1
 endif
-if !isdirectory(&undodir)
-    call mkdir(&undodir, "p")
+if !&sidescrolloff
+  set sidescrolloff=5
 endif
-" }}}
+set display+=lastline
 
-"_.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-.__.--.__.-'""`-._
-""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'""`--'""`-.__.-'"
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
 
-" Plugins settings and mappings {{{
-" Fugitive -----------------------------------------
-autocmd BufReadPost fugitive://* set bufhidden=delete
-command Merge Gvdiffsplit!
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 
-" FZF -----------------------
-let g:fzf_preview_window = []
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
-" ALE  ------------------------------
-nmap <leader>e :Errors<cr>
-" let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
-let g:ale_linters = {'python': ['flake8']}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['isort', 'black'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '·'
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
 
-" YCM  ------------------------------
-" tab for ultisnips, not you
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+  set shell=/usr/bin/env\ bash
+endif
 
-" Airline ------------------------------
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#whitespace#enabled = 0
+set autoread
 
-" Python ----------------------
-" python 3.7 syntax for all
-let g:python_highlight_all = 1
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+set viewoptions-=options
 
-" EasyMotion ------------------
-map gs <plug>(easymotion-prefix)
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^Eterm'
+  set t_Co=16
+endif
 
-" Limelight -------------------------------
-let g:limelight_conceal_ctermfg = 'darkgray'
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
-" }}}
+if empty(mapcheck('<C-U>', 'i'))
+  inoremap <C-U> <C-G>u<C-U>
+endif
+if empty(mapcheck('<C-W>', 'i'))
+  inoremap <C-W> <C-G>u<C-W>
+endif
+
+" vim:set ft=vim et sw=2:
