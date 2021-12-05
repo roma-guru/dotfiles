@@ -7,6 +7,9 @@ path=( /opt/homebrew/bin $path )
 # set PATH so it includes user's private bin if it exists
 path=( ~/.local/bin $path )
 
+# iterm tools
+path=( ~/.iterm2 $path )
+
 # python path
 export PYTHONASYNCIODEBUG=1
 path=( ~/anaconda3/condabin $path )

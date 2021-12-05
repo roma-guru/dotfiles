@@ -15,6 +15,11 @@ export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
 
+# edit in vim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # FZF power
 source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
@@ -26,4 +31,3 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Just for Fun
 [ $RANDOM -lt 7777 ] && ricksay
-
