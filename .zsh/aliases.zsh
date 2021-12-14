@@ -12,9 +12,8 @@ def trash {
     mv $1 ~/.Trash
 }
 alias le='bat'
-alias d='dirs -v'
+alias dirs='dirs -v'
 alias l='exa -lh'
-alias k='k -h'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
 alias cp='cp -R'
@@ -50,10 +49,6 @@ alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 alias reload='. ~/.zshrc'
 
-# Direnv
-alias dea="direnv allow"
-alias der="direnv reload"
-
 # Greps
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
@@ -80,19 +75,6 @@ def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
 
-# Anaconda
-def conda-act() {
-    eval $(conda shell.zsh activate $1)
-}
-def conda-deact() {
-    eval $(conda shell.zsh deactivate)
-}
-
-# Django additions
-alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
-alias djpasswd="./manage.py changepassword"
-alias djck="./manage.py check"
-
 # Pip
 alias pip=pip3
 alias pip3="py -m pip"
@@ -104,7 +86,6 @@ alias piprm="pip3 uninstall"
 alias pipgrep="pip3 freeze | grep"
 
 # Git
-alias git='hub'
 alias gpa="git push all && git push all --tags"
 alias gaf="git add -f"
 alias grm="git rm"
@@ -129,17 +110,6 @@ alias gob="go build"
 alias gobd="go build -ldflags=-compressdwarf=false"
 alias got="go test"
 alias gog="go get -v -u"
-
-# Docker
-alias doc='docker'
-alias docker-rmrf='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
-alias docker-rm-all='docker rm $(docker ps -a -q)'
-alias docomp='docker compose'
-alias kub='kubectl'
-
-hash -d local-bin="$HOME/.local/bin"
-hash -d vim-plug="$HOME/.vim/plugged/"
-hash -d go-home="$HOME/go"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'

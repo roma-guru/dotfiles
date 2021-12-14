@@ -1,0 +1,5 @@
+source ~/.vimrc
+
+map gs/ :action AceAction<CR>
+" map F :action AceTargetAction<CR>
+map gsj :action AceLineAction<CR>
