@@ -5,7 +5,6 @@ source $ZPLUG_HOME/init.zsh
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/pip",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
-zplug "plugins/docker",   from:oh-my-zsh
 zplug "plugins/kubectl",   from:oh-my-zsh
 zplug "plugins/docker",   from:oh-my-zsh
 zplug "plugins/poetry",   from:oh-my-zsh

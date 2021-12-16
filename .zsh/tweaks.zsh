@@ -29,5 +29,5 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # Stop breking autoupdates!
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Just for Fun
-[ $RANDOM -lt 7777 ] && ricksay
+# MOTD
+fortune -s
