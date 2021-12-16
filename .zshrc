@@ -7,6 +7,10 @@ zplug "plugins/pip",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 zplug "plugins/docker",   from:oh-my-zsh
 zplug "plugins/kubectl",   from:oh-my-zsh
+zplug "plugins/docker",   from:oh-my-zsh
+zplug "plugins/poetry",   from:oh-my-zsh
+zplug "plugins/python",   from:oh-my-zsh
+zplug "plugins/golang",   from:oh-my-zsh
 
 # Zdharma!
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2

@@ -34,7 +34,7 @@ alias e="emacs" && alias v="vim" # make peace not war
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias vo="vim -O"
-alias h="history -i"
+alias h="history -i 1"
 alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill -9 %1"
@@ -52,7 +52,7 @@ alias reload='. ~/.zshrc'
 # Greps
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
-alias hgrep='history | grep'
+alias hgrep='h | grep'
 alias lgrep='!! | grep'
 
 # IP info
@@ -104,19 +104,13 @@ alias gdno="git diff --name-only"
 alias jupy="jupyter notebook"
 alias jupyc="jupyter console"
 
-# Go
-alias gor="go run"
-alias gob="go build"
-alias gobd="go build -ldflags=-compressdwarf=false"
-alias got="go test"
-alias gog="go get -v -u"
-
 # OS specifics
 alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
 
 # Brew
 alias brewi="brew install"
+alias brewl="brew link"
 alias brewica="brew install --cask"
 alias brewup="brew update"
 alias brewrm="brew uninstall"

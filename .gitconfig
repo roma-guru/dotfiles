@@ -1,6 +1,6 @@
 [user]
 	email = ravoropaev@sbercloud.ru
-	name = Воропаев Роман
+	name = Voropaev Roman
 
 [push]
   # push should only push current branch, not all branches
