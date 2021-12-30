@@ -10,3 +10,6 @@ hash -d pvenvs=~/Library/Caches/pypoetry/virtualenvs
 # Kubernetes
 alias k=kubectl
 alias d=docker
+alias m=minikube
+alias ku=kustomize
+alias stern="stern --template '{{printf \"%s\n\" .Message }}'"

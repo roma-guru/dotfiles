@@ -21,3 +21,6 @@ path=( /usr/local/sbin /usr/local/bin $path )
 export GO111MODULE=on
 export GOPATH=~/go
 path=( $GOPATH/bin $HOME/.cargo/bin $path )
+
+# istio
+path=( ~/istio/bin $path )
