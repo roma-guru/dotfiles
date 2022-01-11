@@ -11,11 +11,9 @@ zplug "plugins/poetry",   from:oh-my-zsh
 zplug "plugins/python",   from:oh-my-zsh
 zplug "plugins/golang",   from:oh-my-zsh
 
-# Zdharma!
-zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
-
 # Other
-zplug "Tarrasch/zsh-bd"
+zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
