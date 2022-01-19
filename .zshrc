@@ -50,3 +50,5 @@ fi
 # Direnv
 eval "$(direnv hook zsh)"
 
+# Broot (testing)
+source /home/roma/.config/broot/launcher/bash/br
