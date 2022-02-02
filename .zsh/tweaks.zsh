@@ -18,7 +18,8 @@ export EDITOR=vim
 # edit in vim
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+bindkey "^v" edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # FZF power
 source ~/.zsh/fzf-bindings

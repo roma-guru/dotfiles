@@ -5,14 +5,8 @@ alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias func=function
-alias def=function
-
-def trash {
-    mv $1 ~/.Trash
-}
 alias le='bat'
-alias dirs='dirs -v'
+alias d='dirs -v'
 alias l='exa -lh'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
@@ -40,6 +34,7 @@ alias rrr="r -3"
 alias killj="kill -9 %1"
 
 alias vimzsh="vim ~/.zsh"
+alias vimcomp='file=completions && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -58,22 +53,16 @@ alias lgrep='!! | grep'
 # IP info
 alias myip='ifconfig en0 | grep "inet\s" | cut -f 2 -d " "'
 alias myip-ext='curl ifconfig.pro'
-func ipinfo() {
-    curl ipinfo.io/$1
-}
 
 # Python
 alias py='python3'
 alias pypy='pypy3'
-alias ipy='ipython'
+alias ipy='ipython3'
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
 alias pyclean='rm -rf **/__pycache__'
 alias pytags='ctags -R --language-force=python'
-def pypkg() {
-    mkdir $1 && touch $1/__init__.py
-}
 
 # Pip
 alias pip=pip3
