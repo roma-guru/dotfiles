@@ -34,7 +34,7 @@ alias rrr="r -3"
 alias killj="kill -9 %1"
 
 alias vimzsh="vim ~/.zsh"
-alias vimcomp='file=completions && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
+alias vimcomp='file=complets && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
