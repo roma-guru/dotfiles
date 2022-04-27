@@ -10,6 +10,9 @@ path=( ~/.local/bin $path )
 # iterm tools
 path=( ~/.iterm2 $path )
 
+# doom emacs
+path=( ~/.emacs.d/bin $path )
+
 # python path
 export PYTHONASYNCIODEBUG=1
 path=( ~/anaconda3/condabin $path )
@@ -21,3 +24,6 @@ path=( /usr/local/sbin /usr/local/bin $path )
 export GO111MODULE=on
 export GOPATH=~/go
 path=( $GOPATH/bin $HOME/.cargo/bin $path )
+
+# clibs
+export CPATH=/opt/homebrew/include

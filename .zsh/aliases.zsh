@@ -1,9 +1,11 @@
 # System
 alias _='sudo'
-alias cd-='cd -'
+alias --='cd -'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+# alias +=?
+# alias @=?
 
 alias func=function
 alias def=function
@@ -12,16 +14,15 @@ def trash {
     mv $1 ~/.Trash
 }
 alias le='bat'
-alias d='dirs -v'
+alias dirs='dirs -v'
 alias l='exa -lh'
-alias k='k -h'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
 alias cp='cp -R'
 alias rm='rm -r'
 alias rmf='rm -rf'
 alias du='du -h'
-alias df='df -Ph'
+alias df='duf'
 alias nog='noglob'
 alias loc='noglob locate'
 alias desk='cd ~/Desktop'
@@ -34,8 +35,7 @@ alias find='noglob find'
 alias e="emacs" && alias v="vim" # make peace not war
 alias svim="sudo vim"
 alias vi="vim -u NONE"
-alias vo="vim -O"
-alias h="history -i"
+alias h="history -i 1"
 alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill -9 %1"
@@ -51,13 +51,13 @@ alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 alias reload='. ~/.zshrc'
 
 # Direnv
-alias dea="direnv allow"
-alias der="direnv reload"
+# alias dea="direnv allow"
+# alias der="direnv reload"
 
 # Greps
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
-alias hgrep='history | grep'
+alias hgrep='history 1 | grep'
 alias lgrep='!! | grep'
 
 # IP info
@@ -88,11 +88,6 @@ def conda-deact() {
     eval $(conda shell.zsh deactivate)
 }
 
-# Django additions
-alias djsuper="./manage.py createsuperuser --username $USER --email $USER@localhost"
-alias djpasswd="./manage.py changepassword"
-alias djck="./manage.py check"
-
 # Pip
 alias pip=pip3
 alias pip3="py -m pip"
@@ -104,7 +99,6 @@ alias piprm="pip3 uninstall"
 alias pipgrep="pip3 freeze | grep"
 
 # Git
-alias git='hub'
 alias gpa="git push all && git push all --tags"
 alias gaf="git add -f"
 alias grm="git rm"
@@ -130,13 +124,6 @@ alias gobd="go build -ldflags=-compressdwarf=false"
 alias got="go test"
 alias gog="go get -v -u"
 
-# Docker
-alias doc='docker'
-alias docker-rmrf='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
-alias docker-rm-all='docker rm $(docker ps -a -q)'
-alias docomp='docker compose'
-alias kub='kubectl'
-
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
@@ -145,18 +132,12 @@ hash -d go-home="$HOME/go"
 alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
 
-# Brew
-alias brewi="brew install"
-alias brewica="brew install --cask"
-alias brewup="brew update"
-alias brewrm="brew uninstall"
-alias brewls="brew list"
-alias brews="brew search"
-alias brewsvc="brew services"
-alias brewup="brew upgrade"
-alias brewfzf="brew search | fzf --preview 'brew info {}' --layout=reverse --bind 'enter:execute(brew info {} | less)'"
-
 # URLs w/o quoting!
 alias curl="nog curl"
 alias xh="nog xh"
 alias http="nog http"
+
+# transfer.sh
+def transfer() {
+    if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
+}

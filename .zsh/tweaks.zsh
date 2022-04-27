@@ -7,18 +7,19 @@ autoload -U zmv
 autoload -U zcalc
 autoload -Uz promptinit
 bindkey -v
-bindkey "^e" push-line-or-edit
+bindkey "^z" push-line-or-edit
 bindkey -M vicmd "^t" transpose-words
 bindkey -M vicmd "K" run-help
 export REPORTTIME=3
 export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
+zstyle ':completion:*' rehash true
 
 # edit in vim
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+bindkey "^v" edit-command-line
 
 # FZF power
 source ~/.zsh/fzf-bindings
