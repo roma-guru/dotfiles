@@ -8,6 +8,8 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/pip",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
+zplug "modules/osx",    from:prezto
+zplug "modules/brew",    from:prezto
 
 # Zdharma!
 zplug "zdharma/fast-syntax-highlighting", defer:2

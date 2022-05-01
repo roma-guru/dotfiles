@@ -1,6 +1,5 @@
 # System
 alias _='sudo'
-alias --='cd -'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'

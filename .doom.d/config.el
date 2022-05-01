@@ -26,8 +26,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (if (eq system-type 'gnu/linux)
-    (setq doom-theme 'doom-city-lights)
-    (setq doom-theme 'doom-one-light)
+    (setq doom-theme 'doom-one)
 )
 
 ;; If you use `org' and don't want your org files in the default location below,
