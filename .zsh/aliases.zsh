@@ -126,6 +126,10 @@ alias gog="go get -v -u"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
+hash -d postgres-data="/opt/homebrew/var/postgres"
+hash -d homebrew="/opt/homebrew/Cellar"
+hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
+hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'
