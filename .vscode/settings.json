@@ -79,18 +79,6 @@
 	"settingsSync.ignoredSettings": [
 		"workbench.colorTheme"
 	],
-	"yaml.schemas": {
-        "file:///Users/roma/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    },
-	"atlascode.jira.enabled": true,
-	"atlascode.bitbucket.enabled": false,
-	"atlascode.jira.jqlList": [
-	],
-	"atlascode.jira.startWorkBranchTemplate.customTemplate": "{{{issueKey}}}",
-	"atlascode.jira.statusbar.showProduct": false,
-	"atlascode.jira.statusbar.enabled": true,
-	"atlascode.jira.statusbar.showUser": false,
-	"atlascode.jira.statusbar.showLogin": true,
 	"workbench.colorTheme": "Box UK (rainglow)",
 	"python.languageServer": "Pylance",
 	"python.analysis.logLevel": "Trace",

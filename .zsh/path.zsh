@@ -15,7 +15,6 @@ path=( ~/.emacs.d/bin $path )
 
 # python path
 export PYTHONASYNCIODEBUG=1
-path=( ~/anaconda3/condabin $path )
 
 # admin tools
 path=( /usr/local/sbin /usr/local/bin $path )
@@ -27,3 +26,7 @@ path=( $GOPATH/bin $HOME/.cargo/bin $path )
 
 # clibs
 export CPATH=/opt/homebrew/include
+
+# biology
+path=( ~/Library/Emboss/bin $path )
+DYLD_LIBRARY_PATH=~/Library/Emboss/lib

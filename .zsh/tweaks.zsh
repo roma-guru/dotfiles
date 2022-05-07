@@ -31,4 +31,4 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Just for Fun
-[ $RANDOM -lt 7777 ] && ricksay
+[ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ] && ricksay
