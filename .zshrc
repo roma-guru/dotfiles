@@ -7,13 +7,17 @@ zplug "zsh-users/zsh-history-substring-search"
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/pip",   from:oh-my-zsh
+zplug "plugins/python",   from:oh-my-zsh
+zplug "plugins/golang",   from:oh-my-zsh
+zplug "plugins/ripgrep",   from:oh-my-zsh
+zplug "plugins/fd",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
+
 zplug "modules/osx",    from:prezto
 zplug "modules/homebrew",    from:prezto
 
 # Zdharma!
 zplug "zdharma/fast-syntax-highlighting", defer:2
-zplug "zdharma/zui"
 
 # Other
 zplug "supercrabtree/k"

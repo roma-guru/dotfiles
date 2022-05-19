@@ -96,4 +96,7 @@ fzf-dirs-widget() {
 zle     -N    fzf-dirs-widget
 bindkey '^S' fzf-dirs-widget
 
+# Git bindings (https://junegunn.kr/2016/07/fzf-git/)
+# TODO
+
 fi
