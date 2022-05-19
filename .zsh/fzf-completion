@@ -187,13 +187,14 @@ fzf-completion() {
   fi
 }
 
+key='^N'
 [ -z "$fzf_default_completion" ] && {
-  binding=$(bindkey '^I')
+  binding=$(bindkey $key)
   [[ $binding =~ 'undefined-key' ]] || fzf_default_completion=$binding[(s: :w)2]
   unset binding
 }
 
 zle     -N   fzf-completion
-bindkey '^I' fzf-completion
+bindkey $key fzf-completion
 
 fi
