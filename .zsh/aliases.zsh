@@ -13,7 +13,7 @@ def trash {
     mv $1 ~/.Trash
 }
 alias le='bat'
-alias dirs='dirs -v'
+alias d='dirs -v'
 alias l='exa -lh'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'

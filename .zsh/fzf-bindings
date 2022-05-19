@@ -2,7 +2,7 @@
 # ------------
 if [[ $- == *i* ]]; then
 
-# ALT-E - Paste the selected file path(s) into the command line
+# Ctrl-F - Paste the selected file path(s) into the command line
 __fsel() {
   local cmd="${FZF_CTRL_T_COMMAND:-"command find -L . -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
     -o -type f -print \
@@ -33,7 +33,7 @@ fzf-file-widget() {
   return $ret
 }
 zle     -N   fzf-file-widget
-bindkey '\ee' fzf-file-widget
+bindkey '^F' fzf-file-widget
 
 # Ensure precmds are run after cd
 fzf-redraw-prompt() {
@@ -45,7 +45,7 @@ fzf-redraw-prompt() {
 }
 zle -N fzf-redraw-prompt
 
-# ALT-C - cd into the selected directory
+# Ctrl-J - cd into the selected directory
 fzf-cd-widget() {
   local cmd="${FZF_ALT_C_COMMAND:-"command find -L . -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
     -o -type d -print 2> /dev/null | cut -b3-"}"
@@ -62,7 +62,7 @@ fzf-cd-widget() {
   return $ret
 }
 zle     -N    fzf-cd-widget
-bindkey '\ec' fzf-cd-widget
+bindkey '^J' fzf-cd-widget
 
 # CTRL-R - Paste the selected command from history into the command line
 fzf-history-widget() {
@@ -83,7 +83,7 @@ fzf-history-widget() {
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 
-# ALT-D - cd into the dir stack
+# Ctrl-S - cd into the dir stack
 fzf-dirs-widget() {
   local cmd="dirs -v"
   local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m | cut -f 2)"
@@ -94,6 +94,6 @@ fzf-dirs-widget() {
   return $ret
 }
 zle     -N    fzf-dirs-widget
-bindkey '\ed' fzf-dirs-widget
+bindkey '^S' fzf-dirs-widget
 
 fi

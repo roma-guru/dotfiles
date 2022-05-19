@@ -14,7 +14,7 @@ path=( ~/.iterm2 $path )
 path=( ~/.emacs.d/bin $path )
 
 # python path
-export PYTHONASYNCIODEBUG=1
+export PYTHONASYNCIODEBUG=0
 
 # admin tools
 path=( /usr/local/sbin /usr/local/bin $path )
@@ -23,6 +23,9 @@ path=( /usr/local/sbin /usr/local/bin $path )
 export GO111MODULE=on
 export GOPATH=~/go
 path=( $GOPATH/bin $HOME/.cargo/bin $path )
+
+# anaconda
+path=( $path ~/opt/anaconda3/bin )
 
 # clibs
 export CPATH=/opt/homebrew/include
