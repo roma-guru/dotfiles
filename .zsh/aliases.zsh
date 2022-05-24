@@ -37,7 +37,7 @@ alias vi="vim -u NONE"
 alias h="history -i 1"
 alias rr="r -2"
 alias rrr="r -3"
-alias killj="kill -9 %1"
+alias killj="kill %1"
 
 alias vimzsh="vim ~/.zsh"
 alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -115,13 +115,6 @@ alias gdno="git diff --name-only"
 # Jupyter
 alias jupy="jupyter notebook"
 alias jupyc="jupyter console"
-
-# Go
-alias gor="go run"
-alias gob="go build"
-alias gobd="go build -ldflags=-compressdwarf=false"
-alias got="go test"
-alias gog="go get -v -u"
 
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"

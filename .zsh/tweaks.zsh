@@ -15,6 +15,7 @@ export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
 zstyle ':completion:*' rehash true
+func chpwd() { k -h }
 
 # edit in vim
 autoload -z edit-command-line
