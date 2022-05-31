@@ -259,6 +259,8 @@ set completeopt+=menuone
 
 " save as sudo
 ca w!! w !sudo tee "%"
+" reload config
+ca reload source ~/.vimrc
 
 " when scrolling, keep cursor lines away from screen border
 set scrolloff=2
@@ -302,10 +304,19 @@ let g:fzf_preview_window = []
 " ALE  ------------------------------
 nmap <leader>e :Errors<cr>
 " let g:ale_linters = {'python': ['pylint', 'mypy', 'flake8']}
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'cpp': ['clang'],
+\   'rust': ['rustc'],
+\   'go': ['gopls', 'go-vet', 'golint'],
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['isort', 'black'],
+\   'cpp': ['clang-format'],
+\   'rust': ['rustfmt'],
+\   'go': ['gofmt', 'golines', 'goimports'],
+\   'swift': ['apple-swift-format'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '●'
