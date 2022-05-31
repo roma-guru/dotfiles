@@ -5,17 +5,15 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 # alias +=?
 # alias @=?
+alias d='dirs -v'
+alias l='exa -lh'
+alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
+alias h="history -i 1"
 
 alias func=function
 alias def=function
 
-def trash {
-    mv $1 ~/.Trash
-}
 alias le='bat'
-alias d='dirs -v'
-alias l='exa -lh'
-alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
 alias la='l -a'
 alias cp='cp -R'
 alias rm='rm -r'
@@ -30,11 +28,11 @@ alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
+alias arc='archive'
 
 alias e="emacs" && alias v="vim" # make peace not war
 alias svim="sudo vim"
 alias vi="vim -u NONE"
-alias h="history -i 1"
 alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill %1"
@@ -48,6 +46,10 @@ alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 alias reload='. ~/.zshrc'
+
+def del {
+    mv $1 ~/.Trash
+}
 
 # Direnv
 # alias dea="direnv allow"

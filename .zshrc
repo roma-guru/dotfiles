@@ -13,6 +13,8 @@ zplug "plugins/ripgrep",   from:oh-my-zsh
 zplug "plugins/fd",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 
+zplug "modules/archive",    from:prezto
+zplug "modules/completion",    from:prezto
 zplug "modules/osx",    from:prezto
 zplug "modules/homebrew",    from:prezto
 
