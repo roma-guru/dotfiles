@@ -12,6 +12,7 @@ zplug "plugins/golang",   from:oh-my-zsh
 zplug "plugins/ripgrep",   from:oh-my-zsh
 zplug "plugins/fd",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
+zplug "plugins/fasd",   from:oh-my-zsh
 
 zplug "modules/archive",    from:prezto
 zplug "modules/completion",    from:prezto

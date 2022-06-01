@@ -31,6 +31,7 @@ alias find='noglob find'
 alias arc='archive'
 
 alias e="emacs" && alias v="vim" # make peace not war
+alias m="micro"; alias n="nano"
 alias svim="sudo vim"
 alias vi="vim -u NONE"
 alias rr="r -2"
@@ -118,6 +119,7 @@ alias gdno="git diff --name-only"
 alias jupy="jupyter notebook"
 alias jupyc="jupyter console"
 
+hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
