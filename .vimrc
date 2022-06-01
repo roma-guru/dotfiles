@@ -115,6 +115,7 @@ augroup short_indents
     autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType swift setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
 " always show status bar
