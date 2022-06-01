@@ -33,3 +33,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Just for Fun
 [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ] && ricksay
+
+# fasd completions
+bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (files and directories)
+bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
+bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
