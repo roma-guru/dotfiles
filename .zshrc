@@ -6,13 +6,15 @@ zplug "zsh-users/zsh-history-substring-search"
 
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/pip",   from:oh-my-zsh
-zplug "plugins/python",   from:oh-my-zsh
-zplug "plugins/golang",   from:oh-my-zsh
 zplug "plugins/ripgrep",   from:oh-my-zsh
 zplug "plugins/fd",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 zplug "plugins/fasd",   from:oh-my-zsh
+zplug "plugins/pip",   from:oh-my-zsh
+zplug "plugins/python",   from:oh-my-zsh
+zplug "plugins/golang",   from:oh-my-zsh
+zplug "plugins/npm",    from:oh-my-zsh
+zplug "plugins/yarn",    from:oh-my-zsh
 
 zplug "modules/archive",    from:prezto
 zplug "modules/completion",    from:prezto

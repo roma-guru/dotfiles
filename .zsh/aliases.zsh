@@ -119,6 +119,7 @@ alias gdno="git diff --name-only"
 alias jupy="jupyter notebook"
 alias jupyc="jupyter console"
 
+# Dir aliases
 hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
