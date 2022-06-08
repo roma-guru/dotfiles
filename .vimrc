@@ -86,7 +86,7 @@ endif
 " Vim settings and mappings {{{
 
 " no vi-compatible
-set nocompatible magic
+set nocompatible magic autowrite
 
 " allow plugins by file type (required for plugins!)
 filetype plugin on

@@ -32,7 +32,10 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Just for Fun
-[ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ] && ricksay
+if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
+    [ $RANDOM -lt 9999 ] && char=Morty || char=Rick
+    ricksay -c $char
+fi
 
 # fasd completions
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (files and directories)
