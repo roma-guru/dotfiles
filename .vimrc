@@ -172,20 +172,27 @@ nnoremap <c-s> :w<cr>
 " insert new freq utils here!
 " ...
 
-" no sense on touchbar 😔
-" " run debug keys
-" augroup filetype_python
-"     autocmd!
-"     autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-" augroup END
-" augroup filetype_go
-"     autocmd!
-"     autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-" augroup END
-" augroup filetype_sh
-"     autocmd!
-"     autocmd FileType sh nnoremap <f5> :!zsh %<cr>
-" augroup END
+" run debug keys
+augroup filetype_python
+    autocmd!
+    autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
+augroup END
+augroup filetype_swift
+    autocmd!
+    autocmd FileType swift nnoremap <f5> :!clear;swift %<cr>
+augroup END
+augroup filetype_go
+    autocmd!
+    autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
+augroup END
+augroup filetype_sh
+    autocmd!
+    autocmd FileType sh nnoremap <f5> :!zsh %<cr>
+augroup END
+augroup filetype_ts
+    autocmd!
+    autocmd FileType typescript nnoremap <f5> :!ts-node %<cr>
+augroup END
 
 " autofolding vimrc
 augroup filetype_vim
@@ -216,6 +223,9 @@ nnoremap <space>qQ :qa!<cr>
 nnoremap <space>qf :bd<cr>
 nnoremap <space>bd :bd<cr>
 nnoremap <space>Q  :copen<cr>
+
+" inspired by vscode
+nnoremap <C-Tab> <C-^>
 
 " pytest
 nnoremap <space>tf :Pytest function<cr>
