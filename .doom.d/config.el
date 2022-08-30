@@ -25,9 +25,9 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(if (eq system-type 'gnu/linux)
-    (setq doom-theme 'doom-one)
-)
+;;
+;; TODO: dark theme in the evening
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -78,3 +78,7 @@
 
 ;; Go path
 (setenv "PATH" (concat "/home/roma/go/bin:" (getenv "PATH")))
+
+;; Make Home not a project but great place
+(after! projectile (setq projectile-project-root-files-bottom-up (remove
+            ".git" projectile-project-root-files-bottom-up)))
