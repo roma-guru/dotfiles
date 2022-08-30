@@ -30,7 +30,7 @@ alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
 
-alias e="emacs" && alias v="vim" # make peace not war
+alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
 alias m="micro"; alias n="nano"
 alias svim="sudo vim"
 alias vi="vim -u NONE"
@@ -82,6 +82,15 @@ def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
 
+# Swift
+alias sw='swift'
+alias swc='swiftc'
+
+# Containers
+alias doc="docker"
+alias docomp="docker compose"
+alias pod="podman"
+
 # Anaconda
 def conda-act() {
     eval $(conda shell.zsh activate $1)
@@ -97,6 +106,7 @@ alias pipi="pip3 install"
 alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
 alias pipi-req="pip3 install -r requirements.txt"
 alias pipi-dev="pip3 install -e ."
+alias pipi-test="pip3 install --extra-index-url https://testpypi.python.org/pypi"
 alias piprm="pip3 uninstall"
 alias pipgrep="pip3 freeze | grep"
 
@@ -128,6 +138,7 @@ hash -d postgres-data="/opt/homebrew/var/postgres"
 hash -d homebrew="/opt/homebrew/Cellar"
 hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
 hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
+hash -d python-packages="/opt/homebrew/lib/python3.9/site-packages"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'

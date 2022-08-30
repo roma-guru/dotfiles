@@ -28,6 +28,7 @@ zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "supercrabtree/k"
 zplug "Tarrasch/zsh-bd"
 zplug "molovo/revolver", as:command, use:revolver
+zplug "arzzen/calc.plugin.zsh"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
