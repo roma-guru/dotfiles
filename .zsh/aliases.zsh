@@ -31,6 +31,7 @@ alias find='noglob find'
 alias arc='archive'
 
 alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
+alias nv="nvim"
 alias m="micro"; alias n="nano"
 alias svim="sudo vim"
 alias vi="vim -u NONE"
