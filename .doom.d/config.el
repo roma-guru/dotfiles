@@ -27,7 +27,7 @@
 ;; `load-theme' function. This is the default:
 ;;
 ;; TODO: dark theme in the evening
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-solarized-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -82,3 +82,8 @@
 ;; Make Home not a project but great place
 (after! projectile (setq projectile-project-root-files-bottom-up (remove
             ".git" projectile-project-root-files-bottom-up)))
+
+;; Word wrap by default
+(global-visual-line-mode t)
+;; Disable noisy current line
+(setq global-hl-line-modes nil)
