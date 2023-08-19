@@ -79,7 +79,7 @@
 	"settingsSync.ignoredSettings": [
 		"workbench.colorTheme"
 	],
-	"workbench.colorTheme": "Absent Light (rainglow)",
+	"workbench.colorTheme": "Darkside (rainglow)",
 	"python.languageServer": "Pylance",
 	"python.analysis.logLevel": "Trace",
 	"sourcery.token": "user_sij_cXVe_vpiyCeTkqXFaTr2evhOsBWwlb5R_yf2NoUQbocdw4Xels7TERk",
@@ -96,5 +96,8 @@
 	"editor.autoClosingBrackets": "never",
 	"editor.autoClosingQuotes": "never",
 	"python.terminal.activateEnvironment": true,
-	"editor.inlineSuggest.enabled": true
+	"editor.inlineSuggest.enabled": true,
+	"extensions.autoCheckUpdates": false,
+	"extensions.autoUpdate": "onlyEnabledExtensions",
+	"update.mode": "manual"
 }
