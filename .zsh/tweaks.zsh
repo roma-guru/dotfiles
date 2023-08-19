@@ -6,10 +6,12 @@ zmodload zsh/net/tcp zsh/zftp
 autoload -U zmv
 autoload -U zcalc
 autoload -Uz promptinit
+
 bindkey -v
 bindkey "^z" push-line-or-edit
 bindkey -M vicmd "^t" transpose-words
 bindkey -M vicmd "K" run-help
+
 export REPORTTIME=3
 export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
@@ -37,7 +39,6 @@ if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
     ricksay -c $char
 fi
 
-# fasd completions
-bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (files and directories)
-bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
-bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
+# Locale fix for Spanish
+export LANG="es_ES.UTF-8"
+export LC_ALL="C"

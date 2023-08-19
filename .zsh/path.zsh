@@ -33,3 +33,7 @@ export CPATH=/opt/homebrew/include
 # biology
 path=( ~/Library/Emboss/bin $path )
 DYLD_LIBRARY_PATH=~/Library/Emboss/lib
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
