@@ -60,7 +60,7 @@
 (map! :nv "C-<down>" 'evil-window-down)
 (map! :nv "C-<left>" 'evil-window-left)
 (map! :nv "C-<right>" 'evil-window-right)
-(map! :nv "C-c" 'evil-window-delete)    ; not working
+(map! :nv "C-c" 'evil-window-delete)
 (map! :nv "C-a" 'evil-numbers/inc-at-pt)
 (map! :nv "C-S-a" 'evil-numbers/dec-at-pt)
 
@@ -87,3 +87,8 @@
 (global-visual-line-mode t)
 ;; Disable noisy current line
 (setq global-hl-line-modes nil)
+
+;; Disable copying each edit into clipboard, that's stupid!
+(setq select-enable-clipboard nil)
+(map! :v "M-s-c" 'clipboard-kill-ring-save)
+(map! :ni "M-s-v" 'clipboard-yank)
