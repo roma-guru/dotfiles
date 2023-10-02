@@ -21,6 +21,9 @@ endif
 " Active plugins {{{
 call plug#begin('~/.vim/plugged')
 
+" Quickrun F5
+Plug 'thinca/vim-quickrun'
+
 " Code and files fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -351,5 +354,8 @@ map gs <plug>(easymotion-prefix)
 
 " Limelight -------------------------------
 let g:limelight_conceal_ctermfg = 'darkgray'
+
+" Quickrun
+nmap <f5> :QuickRun<cr>
 
 " }}}

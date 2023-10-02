@@ -98,7 +98,7 @@
        ;;gdscript          ; the language you waited for
        (go +lsp)         ; the hipster dialect
        ;;(haskell +dante)  ; a language that's lazier than I am
-       ;;hy                ; readability of scheme w/ speed of python
+       hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        json              ; At least it ain't XML
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
@@ -115,7 +115,7 @@
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;;scala             ; java, but good
-       ;; scheme            ; a fully conniving family of lisps
+       scheme            ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;; solidity          ; do you need a blockchain? No.
