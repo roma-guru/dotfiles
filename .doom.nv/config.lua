@@ -43,5 +43,7 @@
 
 doom.indent = 2
 doom.relative_num = false
+doom.core.treesitter.settings.show_compiler_warning_message = false
+vim.opt.shell = 'xonsh'
 
 -- vim: sw=2 sts=2 ts=2 expandtab
