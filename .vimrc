@@ -28,11 +28,6 @@ Plug 'thinca/vim-quickrun'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Distraction free
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-peekaboo'
-
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -51,7 +46,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
 " Advanced completions
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 " Plug 'python-rope/ropevim'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'kiteco/vim-plugin'
@@ -63,17 +58,13 @@ Plug 'SirVer/ultisnips'
 " Python and other languages code checker
 Plug 'dense-analysis/ale'
 
-" Python 3.7
-Plug 'vim-python/python-syntax'
-Plug 'alfredodeza/pytest.vim'
-
 " Golang
 Plug 'fatih/vim-go'
 
 " Plugins from vim-scripts repos:
 Plug 'vim-scripts/IndexedSearch'
 Plug 'vim-scripts/matchit.zip'
-" Plug 'vim-scripts/TeTrIs.vim'
+Plug 'vim-scripts/TeTrIs.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -175,28 +166,6 @@ nnoremap <c-s> :w<cr>
 " insert new freq utils here!
 " ...
 
-" run debug keys
-augroup filetype_python
-    autocmd!
-    autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-augroup END
-augroup filetype_swift
-    autocmd!
-    autocmd FileType swift nnoremap <f5> :!clear;swift %<cr>
-augroup END
-augroup filetype_go
-    autocmd!
-    autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-augroup END
-augroup filetype_sh
-    autocmd!
-    autocmd FileType sh nnoremap <f5> :!zsh %<cr>
-augroup END
-augroup filetype_ts
-    autocmd!
-    autocmd FileType typescript nnoremap <f5> :!ts-node %<cr>
-augroup END
-
 " autofolding vimrc
 augroup filetype_vim
     autocmd!
@@ -220,21 +189,10 @@ nnoremap <space>l :Lines<cr>
 nnoremap <space>w <c-w>
 nnoremap <space>` <c-^>
 
-nnoremap <space>g  :Git<cr>
+nnoremap <space>gg  :Git<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
-nnoremap <space>qf :bd<cr>
 nnoremap <space>bd :bd<cr>
-nnoremap <space>Q  :copen<cr>
-
-" inspired by vscode
-nnoremap <C-Tab> <C-^>
-
-" pytest
-nnoremap <space>tf :Pytest function<cr>
-nnoremap <space>tF :Pytest file<cr>
-nnoremap <space>tp :Pytest project verbose<cr>
-nnoremap <space>te :Pytest error<cr>
 
 " universal copypaste
 vnoremap <leader>y "+y
@@ -338,22 +296,15 @@ let g:ale_sign_warning = '·'
 
 " YCM  ------------------------------
 " tab for ultisnips, not you
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
 
 " Airline ------------------------------
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#whitespace#enabled = 0
 
-" Python ----------------------
-" python 3.7 syntax for all
-let g:python_highlight_all = 1
-
 " EasyMotion ------------------
 map gs <plug>(easymotion-prefix)
-
-" Limelight -------------------------------
-let g:limelight_conceal_ctermfg = 'darkgray'
 
 " Quickrun
 nmap <f5> :QuickRun<cr>

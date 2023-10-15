@@ -41,6 +41,8 @@
 --   { "FileType", "javascript", function() print('This is a javascript file') end }
 -- })
 
+doom.use_package("is0n/jaq-nvim")
+
 doom.indent = 2
 doom.relative_num = false
 doom.core.treesitter.settings.show_compiler_warning_message = false
