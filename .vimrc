@@ -193,6 +193,7 @@ nnoremap <space>gg  :Git<cr>
 nnoremap <space>qq :qa<cr>
 nnoremap <space>qQ :qa!<cr>
 nnoremap <space>bd :bd<cr>
+nnoremap <space>ot :term<cr>
 
 " universal copypaste
 vnoremap <leader>y "+y
