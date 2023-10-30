@@ -3,13 +3,15 @@ source $ZPLUG_HOME/init.zsh
 
 # Make sure to use double quotes
 zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
 
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/ripgrep",   from:oh-my-zsh
 zplug "plugins/fd",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
-zplug "plugins/fasd",   from:oh-my-zsh
+# zplug "plugins/fasd",   from:oh-my-zsh
 zplug "plugins/pip",   from:oh-my-zsh
 zplug "plugins/python",   from:oh-my-zsh
 zplug "plugins/golang",   from:oh-my-zsh
@@ -17,12 +19,8 @@ zplug "plugins/npm",    from:oh-my-zsh
 zplug "plugins/yarn",    from:oh-my-zsh
 
 zplug "modules/archive",    from:prezto
-zplug "modules/completion",    from:prezto
 zplug "modules/osx",    from:prezto
 zplug "modules/homebrew",    from:prezto
-
-# Zdharma!
-zplug "zdharma/fast-syntax-highlighting", defer:2
 
 # Other
 zplug "supercrabtree/k"
