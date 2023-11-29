@@ -17,7 +17,7 @@ export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
 zstyle ':completion:*' rehash true
-func chpwd() { k -h }
+func chpwd() { l }
 
 # edit in vim
 autoload -z edit-command-line
@@ -29,16 +29,3 @@ source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
 export FZF_DEFAULT_COMMAND='fd --type f'
-
-# Stop breking autoupdates!
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-# Just for Fun
-if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
-    [ $RANDOM -lt 9999 ] && char=Morty || char=Rick
-    ricksay -c $char
-fi
-
-# Locale fix for Spanish
-export LANG="es_ES.UTF-8"
-export LC_ALL="C"

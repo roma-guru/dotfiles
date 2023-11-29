@@ -46,16 +46,11 @@ alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
-alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 alias reload='. ~/.zshrc'
 
 def del {
     mv $1 ~/.Trash
 }
-
-# Direnv
-# alias dea="direnv allow"
-# alias der="direnv reload"
 
 # Greps
 alias agrep='alias | grep'
@@ -81,23 +76,6 @@ alias pyclean='rm -rf **/__pycache__'
 alias pytags='ctags -R --language-force=python'
 def pypkg() {
     mkdir $1 && touch $1/__init__.py
-}
-
-# Swift
-alias sw='swift'
-alias swc='swiftc'
-
-# Containers
-alias doc="docker"
-alias docomp="docker compose"
-alias pod="podman"
-
-# Anaconda
-def conda-act() {
-    eval $(conda shell.zsh activate $1)
-}
-def conda-deact() {
-    eval $(conda shell.zsh deactivate)
 }
 
 # Pip
@@ -126,9 +104,13 @@ alias gsubaf="git submodule add -f"
 alias gstal="git stash list"
 alias gdno="git diff --name-only"
 
-# Jupyter
-alias jupy="jupyter notebook"
-alias jupyc="jupyter console"
+alias gst="git status"
+alias gcam="git commit --all -m"
+alias gcmsg="git commit -m"
+alias ga="git add"
+alias gaa="git add --all"
+alias gb="git branch"
+alias gd="git diff"
 
 # Dir aliases
 hash -d zsh="$HOME/.zsh"
@@ -140,10 +122,6 @@ hash -d homebrew="/opt/homebrew/Cellar"
 hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
 hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
 hash -d python-packages="/opt/homebrew/lib/python3.9/site-packages"
-
-# OS specifics
-alias ypwd='pwd|pbcopy'
-alias ldd='otool -L'
 
 # URLs w/o quoting!
 alias curl="nog curl"

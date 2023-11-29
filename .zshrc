@@ -2,5 +2,5 @@
 for f in ~/.zsh/*.zsh; source $f;
 
 # Prompt
-promptinit && prompt fade
+promptinit && prompt clint
 
