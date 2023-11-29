@@ -3,14 +3,11 @@
 	name = Roman Voropaev
 
 [push]
-  # push should only push current branch, not all branches
-  default = current
+	# push should only push current branch, not all branches
+	default = current
 [branch]
-  # git pull should always rebase
-  autosetuprebase = always
-
-[color]
-  ui = auto
+	# git pull should always rebase
+	autosetuprebase = always
 
 [rerere]
 	enabled = true
@@ -20,31 +17,20 @@
 [diff]
 	tool = vimdiff
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [mergetool]
-    prompt = false
+	prompt = false
 
 # http://bit.ly/g9c9Y2    (allows: git clone gh:rails/rails)
 [url "git@github.com:"]
-  pushInsteadOf = "gh:"
-  insteadOf = "gh:"
+	pushInsteadOf = "gh:"
+	insteadOf = "gh:"
 
 [url "git@github.com:roma-guru/"]
-  pushInsteadOf = "my:"
-  insteadOf = "my:"
-
-[url "git@gitlab.acc.run:acc/"]
-  pushInsteadOf = "acc:"
-  insteadOf = "acc:"
+	pushInsteadOf = "my:"
+	insteadOf = "my:"
 
 [pull]
-  rebase = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/roma/.stCommitMsg
+	rebase = true
+
