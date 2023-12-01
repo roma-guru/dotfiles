@@ -89,6 +89,11 @@ alias pipi-test="pip3 install --extra-index-url https://testpypi.python.org/pypi
 alias piprm="pip3 uninstall"
 alias pipgrep="pip3 freeze | grep"
 
+# Go
+alias gor="go run"
+alias gob="go build"
+alias got="go test"
+
 # Git
 alias gpa="git push all && git push all --tags"
 alias gaf="git add -f"
@@ -104,6 +109,7 @@ alias gsubaf="git submodule add -f"
 alias gstal="git stash list"
 alias gdno="git diff --name-only"
 
+alias gco="git checkout"
 alias gst="git status"
 alias gcam="git commit --all -m"
 alias gcmsg="git commit -m"
