@@ -29,3 +29,7 @@ source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Zoxide instead of traditional z
+eval "$(zoxide init zsh)"
+export _ZO_ECHO=1
