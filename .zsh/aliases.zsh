@@ -3,8 +3,11 @@ alias _='sudo'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+# Available special aliases
 # alias +=?
+# alias $=?
 # alias @=?
+# alias ,=?
 alias d='dirs -v'
 alias l='exa -lh'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
@@ -44,9 +47,7 @@ alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
-alias vimrc='vim ~/.vimrc && vim +PlugStatus +qa'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
-alias vimipyimp='vim ~/.ipython/profile_default/startup/default_imports.py'
 alias reload='. ~/.zshrc'
 
 def del {
