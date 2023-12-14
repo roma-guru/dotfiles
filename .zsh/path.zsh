@@ -24,15 +24,8 @@ export GO111MODULE=on
 export GOPATH=~/go
 path=( $GOPATH/bin $HOME/.cargo/bin $path )
 
-# anaconda
-path=( $path ~/opt/anaconda3/bin )
-
 # clibs
 export CPATH=/opt/homebrew/include
-
-# biology
-path=( ~/Library/Emboss/bin $path )
-DYLD_LIBRARY_PATH=~/Library/Emboss/lib
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
