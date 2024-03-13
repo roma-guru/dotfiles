@@ -3,11 +3,13 @@ alias _='sudo'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
 # Available special aliases
 # alias +=?
 # alias $=?
 # alias @=?
 # alias ,=?
+
 alias d='dirs -v'
 alias l='exa -lh'
 alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
@@ -23,6 +25,7 @@ alias rm='rm -r'
 alias rmf='rm -rf'
 alias du='dust'
 alias df='duf'
+
 alias nog='noglob'
 alias loc='noglob locate'
 alias desk='cd ~/Desktop'
@@ -31,6 +34,7 @@ alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
+alias fd='noglob fd'
 alias arc='archive'
 
 alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
@@ -75,14 +79,17 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
+alias mkvenv="py -m venv venv"
+alias act=". venv/bin/activate"
 alias deact='deactivate'
-alias pyhttp='python3 -m http.server 8000'
-alias setup='python3 setup.py'
+alias pyhttp='py -m http.server 8000'
+alias setup='py setup.py'
 alias pyclean='rm -rf **/__pycache__'
 alias pytags='ctags -R --language-force=python'
 def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
+alias pyignore='wget https://github.com/github/gitignore/raw/main/Python.gitignore -O .gitignore'
 
 # Swift
 alias sw='swift'
@@ -110,9 +117,11 @@ alias pipi-req="pip3 install -r requirements.txt"
 alias pipi-dev="pip3 install -e ."
 alias pipi-test="pip3 install --extra-index-url https://testpypi.python.org/pypi"
 alias piprm="pip3 uninstall"
+alias pipun="piprm"
 alias pipgrep="pip3 freeze | grep"
 
 # Git
+alias gin="git init"
 alias gpa="git push all && git push all --tags"
 alias gaf="git add -f"
 alias grm="git rm"

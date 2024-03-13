@@ -16,7 +16,6 @@ zplug "plugins/pip",   from:oh-my-zsh
 zplug "plugins/python",   from:oh-my-zsh
 zplug "plugins/golang",   from:oh-my-zsh
 zplug "plugins/npm",    from:oh-my-zsh
-zplug "plugins/yarn",    from:oh-my-zsh
 
 zplug "modules/archive",    from:prezto
 zplug "modules/osx",    from:prezto
@@ -51,6 +50,3 @@ else
     # Prompt
     promptinit && prompt fade
 fi
-
-# Direnv
-eval "$(direnv hook zsh)"
