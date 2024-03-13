@@ -5,7 +5,6 @@
 	"explorer.confirmDelete": false,
 	"go.formatTool": "goimports",
 	"editor.minimap.enabled": false,
-	"workbench.activityBar.visible": true,
 	"breadcrumbs.enabled": false,
 	"editor.renderWhitespace": "trailing",
 	"git.autofetch": true,
@@ -75,7 +74,7 @@
 		}
 	],
 	"extensions.ignoreRecommendations": true,
-	"workbench.editor.showTabs": false,
+	"workbench.editor.showTabs": "single",
 	"settingsSync.ignoredSettings": [
 		"workbench.colorTheme"
 	],
