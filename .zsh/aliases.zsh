@@ -53,6 +53,7 @@ alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias reload='. ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
 
 def del {
     mv $1 ~/.Trash
