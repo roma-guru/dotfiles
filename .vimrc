@@ -213,28 +213,6 @@ augroup END
 " autosave on window focus changed
 autocmd WinLeave :w<cr>
 
-" inspired by doom
-nnoremap <space>. :GitFiles<cr>
-nnoremap <space>, :Buffers<cr>
-nnoremap <space><space> :FZF<cr>
-nnoremap <space>l :Lines<cr>
-nnoremap <space>w <c-w>
-nnoremap <space>` <c-^>
-
-nnoremap <space>g  :Gstatus<cr>
-nnoremap <space>qq :qa<cr>
-nnoremap <space>qQ :qa!<cr>
-nnoremap <space>qf :bd<cr>
-nnoremap <space>Q  :copen<cr>
-
-" pytest
-nnoremap <space>tf :Pytest function<cr>
-nnoremap <space>ta :Pytest file<cr>
-nnoremap <space>tt :Pytest project verbose<cr>
-nnoremap <space>te :Pytest error<cr>
-
-nnoremap gev :edit $MYVIMRC<cr>
-nnoremap grv :source $MYVIMRC<cr>
 vnoremap <leader>y "+y
 
 let g:airline_theme = 'base16color'
