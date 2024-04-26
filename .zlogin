@@ -1,7 +1,6 @@
 # Just for Fun
 if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
-    [ $RANDOM -lt 9999 ] && char=Morty || char=Rick
-    ricksay -c $char
+    ricksay
 fi
 
 # Prompt
