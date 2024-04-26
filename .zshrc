@@ -40,13 +40,3 @@ zplug load
 
 # Local plugins
 for f in ~/.zsh/*.zsh; source $f;
-
-if [ $(uname) = Darwin ]; then
-    # Prompt
-    eval "$(starship init zsh)"
-    # Iterm
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-else
-    # Prompt
-    promptinit && prompt fade
-fi

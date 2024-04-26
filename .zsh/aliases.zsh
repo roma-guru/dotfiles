@@ -25,19 +25,19 @@ alias rm='rm -r'
 alias rmf='rm -rf'
 alias du='dust'
 alias df='duf'
+alias arc='archive'
 
 alias nog='noglob'
 alias loc='noglob locate'
-alias desk='cd ~/Desktop'
 alias noc='nocorrect'
 alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
 alias fd='noglob fd'
-alias arc='archive'
+alias rg='noglob rg'
 
-alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
+alias v="vim"
 alias nv="nvim"
 alias m="micro"; alias n="nano"
 alias svim="sudo vim"
@@ -121,6 +121,12 @@ alias piprm="pip3 uninstall"
 alias pipun="piprm"
 alias pipgrep="pip3 freeze | grep"
 
+# Hatch
+alias h=hatch
+alias hr="hatch run"
+alias hs="hatch shell"
+alias hp="hatch python"
+
 # Git
 alias gin="git init"
 alias gpa="git push all && git push all --tags"
@@ -142,6 +148,10 @@ alias jupy="jupyter notebook"
 alias jupyc="jupyter console"
 
 # Dir aliases
+hash -d desk="$HOME/Desktop"
+hash -d docs="$HOME/Documents"
+hash -d downs="$HOME/Downloads"
+
 hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
@@ -150,7 +160,6 @@ hash -d postgres-data="/opt/homebrew/var/postgres"
 hash -d homebrew="/opt/homebrew/Cellar"
 hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
 hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
-hash -d python-packages="/opt/homebrew/lib/python3.9/site-packages"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'
