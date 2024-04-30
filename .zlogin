@@ -13,4 +13,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source ~/.zsh/fzf-bindings
 source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND="fd --type f"
+
+# Locale
+export LC_ALL="el_GR.UTF-8"

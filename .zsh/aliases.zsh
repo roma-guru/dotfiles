@@ -12,7 +12,7 @@ alias ....='cd ../../..'
 
 alias d='dirs -v'
 alias l='exa -lh'
-alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
+alias j='jobs'
 alias h="history -i 1"
 
 alias func=function
@@ -67,6 +67,7 @@ def del {
 alias agrep='alias | grep'
 alias pgrep='ps -e | grep'
 alias hgrep='history 1 | grep'
+alias egrep='env | grep'
 alias lgrep='!! | grep'
 
 # IP info
@@ -84,7 +85,7 @@ alias mkvenv="py -m venv venv"
 alias act=". venv/bin/activate"
 alias deact='deactivate'
 alias pyhttp='py -m http.server 8000'
-alias setup='py setup.py'
+alias pysetup='py setup.py'
 alias pyclean='rm -rf **/__pycache__'
 alias pytags='ctags -R --language-force=python'
 def pypkg() {
@@ -93,7 +94,9 @@ def pypkg() {
 alias pyignore='wget https://github.com/github/gitignore/raw/main/Python.gitignore -O .gitignore'
 
 # Swift
-alias sw='swift'
+alias sw='swift repl'
+alias swb='swift build'
+alias swr='swift run'
 alias swc='swiftc'
 
 # Containers
@@ -161,6 +164,11 @@ hash -d homebrew="/opt/homebrew/Cellar"
 hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
 hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
 
+# GLOBAL aliases
+alias -g L="|less"
+alias -g NULL=">/dev/null 2>&1"
+alias -g G="|grep"
+
 # OS specifics
 alias ypwd='pwd|pbcopy'
 alias ldd='otool -L'
@@ -173,4 +181,11 @@ alias http="nog http"
 # transfer.sh
 def transfer() {
     if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
+}
+
+# dotenv helper
+def dotenv() {
+    for l (`cat .env`) {
+        eval "export $l"
+    }
 }

@@ -1,1 +1,1 @@
-echo "TODO: something for goodbye!"
+fortune && read -k

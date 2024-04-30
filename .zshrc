@@ -39,4 +39,6 @@ fi
 zplug load
 
 # Local plugins
-for f in ~/.zsh/*.zsh; source $f;
+for f (~/.zsh/*.zsh) {
+    source $f
+}
