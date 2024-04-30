@@ -125,7 +125,7 @@ alias pipun="piprm"
 alias pipgrep="pip3 freeze | grep"
 
 # Hatch
-alias h=hatch
+alias ha=hatch
 alias hr="hatch run"
 alias hs="hatch shell"
 alias hp="hatch python"
