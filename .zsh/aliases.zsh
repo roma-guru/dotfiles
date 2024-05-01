@@ -14,6 +14,8 @@ alias d='dirs -v'
 alias l='exa -lh'
 alias j='jobs'
 alias h="history -i 1"
+alias p=print
+alias pf=printf
 
 alias func=function
 alias def=function
@@ -126,9 +128,9 @@ alias pipgrep="pip3 freeze | grep"
 
 # Hatch
 alias ha=hatch
-alias hr="hatch run"
-alias hs="hatch shell"
-alias hp="hatch python"
+alias har="hatch run"
+alias has="hatch shell"
+alias hap="hatch python"
 
 # Git
 alias gin="git init"
