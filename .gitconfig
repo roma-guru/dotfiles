@@ -20,7 +20,7 @@
 [diff]
 	tool = vimdiff
 [merge]
-    tool = vimdiff
+    tool = opendiff
     conflictstyle = diff3
 [mergetool]
     prompt = false
@@ -34,17 +34,8 @@
   pushInsteadOf = "my:"
   insteadOf = "my:"
 
-[url "git@gitlab.acc.run:acc/"]
-  pushInsteadOf = "acc:"
-  insteadOf = "acc:"
+[url "git@github.com:PacktPublishing"]
+  insteadOf = "packt:"
 
 [pull]
   rebase = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/roma/.stCommitMsg
