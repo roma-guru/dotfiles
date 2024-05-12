@@ -10,6 +10,7 @@ alias ....='cd ../../..'
 # alias @=?
 # alias ,=?
 
+alias t='time'
 alias d='dirs -v'
 alias l='exa -lh'
 alias j='jobs'
@@ -83,8 +84,8 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
-alias mkvenv="py -m venv venv"
-alias act=". venv/bin/activate"
+alias mkvenv="py -m venv .venv"
+alias act=". .venv/bin/activate"
 alias deact='deactivate'
 alias pyhttp='py -m http.server 8000'
 alias pysetup='py setup.py'
@@ -190,4 +191,18 @@ def dotenv() {
     for l (`cat .env`) {
         eval "export $l"
     }
+}
+
+# magic-wormhole
+alias whs="wormhole send"
+alias whr="wormhole receive"
+
+# wttr.in
+func wttr() {
+    it2setkeylabel set status "$(curl wttr.in/$1\?format=3)"
+}
+
+# universal runner
+func f5() {
+    p "not yet"
 }

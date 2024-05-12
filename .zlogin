@@ -3,6 +3,9 @@ if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
     ricksay
 fi
 
+# Weather
+wttr
+
 # Prompt
 eval "$(starship init zsh)"
 
