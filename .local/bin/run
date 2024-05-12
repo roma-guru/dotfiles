@@ -1,0 +1,23 @@
+#!/bin/zsh
+if [[ $# = 0 ]]; then
+    print "Specify file to run"
+fi
+
+case ${1:e} in
+py)
+    [[ -d ".venv" ]] && . .venv/bin/activate
+    python3 $1
+    exit
+;;
+go)
+    go run $1
+    exit
+;;
+rs)
+    cargo run
+    exit
+;;
+*)
+    print "Unknown file type, sorry"
+;;
+esac
