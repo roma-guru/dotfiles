@@ -185,15 +185,8 @@ nnoremap <c-s> :w<cr>
 nmap <c-`> :term<cr>
 tmap <c-`> <c-u><c-d>
 
-" run debug keys
-augroup filetype_python
-    autocmd!
-    autocmd FileType python nnoremap <f5> :!clear;python3 %<cr>
-augroup END
-augroup filetype_go
-    autocmd!
-    autocmd FileType go nnoremap <f5> :!clear;go run %<cr>
-augroup END
+" F5 run key
+nnoremap <f5> :!clear;run %<cr>
 augroup filetype_sh
     autocmd!
     autocmd FileType sh nnoremap <f5> :!zsh %<cr>

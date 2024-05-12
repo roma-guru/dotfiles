@@ -98,5 +98,6 @@
 (set-frame-width (selected-frame) 111)
 
 ;; Quickrun F5
+;; (map! :n "<f5>" ":!run %<cr>")
 (map! :n "<f5>" 'quickrun)
 (map! :v "<f5>" 'quickrun-region)

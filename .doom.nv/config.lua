@@ -17,9 +17,9 @@
 --   { "FileType", "javascript", function() print('This is a javascript file') end }
 -- })
 
-doom.use_package("github/copilot.vim", "is0n/jaq-nvim")
+doom.use_package("github/copilot.vim")
 doom.use_keybind({
-  {"<f5>", ":Jaq<cr>"},
+  {"<f5>", ":!run %<cr>"},
   {"-", ":e .<cr>"},
   {"<c-s>", ":w<cr>"},
   {"<c-right>", "<c-w>l"},
