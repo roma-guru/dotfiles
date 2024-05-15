@@ -43,20 +43,19 @@ alias rg='noglob rg'
 alias v="vim"
 alias nv="nvim"
 alias m="micro"; alias n="nano"
-alias svim="sudo vim"
+alias sv="sudo vim"
 alias vi="vim -u NONE"
 alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill %1"
 
-alias vimzsh="vim ~/.zsh"
 alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
+alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc && . ~/.zshrc'
 alias reload='. ~/.zshrc'
-alias vimrc='vim ~/.vimrc'
 
 def del {
     mv $1 ~/.Trash
@@ -90,7 +89,6 @@ alias deact='deactivate'
 alias pyhttp='py -m http.server 8000'
 alias pysetup='py setup.py'
 alias pyclean='rm -rf **/__pycache__'
-alias pytags='ctags -R --language-force=python'
 def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
@@ -159,8 +157,12 @@ hash -d docs="$HOME/Documents"
 hash -d downs="$HOME/Downloads"
 
 hash -d zsh="$HOME/.zsh"
+hash -d vim="$HOME/.vim"
+hash -d emacs="$HOME/.emacs.d"
+hash -d doom="$HOME/.doom.d"
+hash -d doom-nv="$HOME/.doom.nv"
+
 hash -d local-bin="$HOME/.local/bin"
-hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
 hash -d postgres-data="/opt/homebrew/var/postgres"
 hash -d homebrew="/opt/homebrew/Cellar"
@@ -200,9 +202,4 @@ alias whr="wormhole receive"
 # wttr.in
 func wttr() {
     it2setkeylabel set status "$(curl wttr.in/$1\?format=3)"
-}
-
-# universal runner
-func f5() {
-    p "not yet"
 }

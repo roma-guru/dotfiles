@@ -115,3 +115,13 @@ join-lines() {
 } f b t r h s
 
 fi
+
+# Quickrun F5
+fzf-run-widget() {
+  LBUFFER="run $(__fsel)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle     -N   fzf-run-widget
+bindkey '^[[15~' fzf-run-widget
