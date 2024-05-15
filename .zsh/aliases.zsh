@@ -22,7 +22,6 @@ alias du='dust'
 alias df='duf'
 alias nog='noglob'
 alias loc='noglob locate'
-alias desk='cd ~/Desktop'
 alias noc='nocorrect'
 alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv'
@@ -69,6 +68,7 @@ func ipinfo() {
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython'
+alias act='. .venv/bin/activate'
 alias deact='deactivate'
 alias pyhttp='python3 -m http.server 8000'
 alias setup='python3 setup.py'
@@ -119,6 +119,9 @@ alias gb="git branch"
 alias gd="git diff"
 
 # Dir aliases
+hash -d desk="$HOME/Desktop"
+hash -d downs="$HOME/Downloads"
+
 hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
