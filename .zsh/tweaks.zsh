@@ -8,20 +8,10 @@ autoload -U zmv
 autoload -U zcalc
 autoload -Uz promptinit
 
-bindkey -v
-bindkey "^z" push-line-or-edit
-bindkey "^t" transpose-words
-bindkey "^x" transpose-chars
-bindkey -M vicmd "K" run-help
-
+# Env
 export REPORTTIME=3
 export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
 zstyle ':completion:*' rehash true
 func chpwd() { k -h | head -n 10; print ... }
-
-# edit in vim
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^v" edit-command-line

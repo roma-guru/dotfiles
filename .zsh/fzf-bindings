@@ -125,3 +125,15 @@ fzf-run-widget() {
 }
 zle     -N   fzf-run-widget
 bindkey '^[[15~' fzf-run-widget
+
+# Conda env
+fzf-conda-widget() {
+  local cmd="conda env list --json | jq -r '.envs[]'"
+  local env="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m | cut -f 2)"
+  LBUFFER="conda-act $env"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle     -N   fzf-conda-widget
+bindkey '^[OR' fzf-conda-widget
