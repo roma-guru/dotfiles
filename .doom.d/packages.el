@@ -50,3 +50,7 @@
 ;(unpin! t)
 (package! origami)
 (package! deadgrep)
+
+(package! jsonrpc)
+(package! copilot
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
