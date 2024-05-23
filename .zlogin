@@ -1,16 +1,21 @@
-# Just for Fun
-if [ $RANDOM -lt 7777 -a $TERM_PROGRAM = iTerm.app ]; then
-    ricksay
-fi
+# iTerm
+case $TERM_PROGRAM in
+    iTerm.app)
+        # Weather
+        wttr
 
-# Weather
-wttr
+        # Shell integration
+        test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    ;&
 
-# Prompt
-eval "$(starship init zsh)"
+    WarpTerminal)
+        # Just for Fun
+        [ $RANDOM -lt 7777 ] && ricksay
 
-# Iterm
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+        # Prompt
+        eval "$(starship init zsh)"
+    ;;
+esac
 
 # FZF
 source ~/.zsh/fzf-bindings
@@ -20,3 +25,9 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 
 # Locale
 export LC_ALL="el_GR.UTF-8"
+
+# Bat theme
+export BAT_THEME=zenburn
+
+# Homebrew stop breaking!
+export HOMEBREW_NO_AUTO_UPDATE=1
