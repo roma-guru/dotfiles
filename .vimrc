@@ -19,23 +19,8 @@ if vim_plug_just_installed
 endif
 "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>}}}
 
-" Active plugins {{{ 
+" Active plugins {{{
 call plug#begin('~/.vim/plugged')
-
-" DOOM-like which-key
-" Plug 'liuchengxu/vim-which-key'
-
-" Signify + Startup
-Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
-
-" Code and files fuzzy finder
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-
-" Distraction free
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -54,10 +39,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 
 " Better autocompletion, searching best
-Plug 'davidhalter/jedi-vim'
-Plug 'python-rope/ropevim'
-" Plug 'ycm-core/YouCompleteMe'
-" Plug 'kiteco/vim-plugin'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'python-rope/ropevim'
+Plug 'ycm-core/YouCompleteMe'
 
 " Snippets manager (SnipMate), dependencies, and snippets repo
 Plug 'honza/vim-snippets'
@@ -65,15 +49,6 @@ Plug 'SirVer/ultisnips'
 
 " Python and other languages code checker
 Plug 'scrooloose/syntastic'
-
-" Python 3.7
-Plug 'vim-python/python-syntax'
-Plug 'alfredodeza/pytest.vim'
-
-" Plugins from vim-scripts repos:
-Plug 'vim-scripts/IndexedSearch'
-Plug 'vim-scripts/matchit.zip'
-" Plug 'vim-scripts/TeTrIs.vim'
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
@@ -200,36 +175,7 @@ augroup autosave_folds
     autocmd BufWinEnter *.* silent loadview
 augroup END
 
-" inspired by doom
-nnoremap <space>. :GitFiles<cr>
-nnoremap <space>, :Buffers<cr>
-nnoremap <space><space> :FZF<cr>
-nnoremap <space>l :Lines<cr>
-nnoremap <space>w <c-w>
-nnoremap <space>` <c-^>
-
-nnoremap <space>g  :Gstatus<cr>
-nnoremap <space>qq :qa<cr>
-nnoremap <space>qQ :qa!<cr>
-nnoremap <space>qf :bd<cr>
-nnoremap <space>tf :Pytest function --pdb<cr>
-nnoremap <space>tF :Pytest file --pdb<cr>
-nnoremap <space>Q  :copen<cr>
-
-nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>rv :source $MYVIMRC<cr>
-vnoremap <leader>y "+y
-nnoremap <leader>; execute "normal! A;<esc>"
-nnoremap <leader>f execute "normal! F"if<esc>"
-
-command! AirlineThemes call fzf#run({
-  \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
-  \               "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-  \ 'sink':    'AirlineTheme',
-  \ 'options': '+m --prompt="AirlineThemes> "',
-  \ 'down':    '~40%'
-  \})
-nnoremap <leader>t :AirlineThemes<cr>
+nnoremap <leader>t :AirlineTheme<space>
 nnoremap <leader>c :colorscheme<space>
 nnoremap <leader>w :set wrap!<cr>
 
@@ -315,50 +261,7 @@ let g:ycm_key_list_previous_completion=[]
 
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#whitespace#enabled = 0
-
-" Python ----------------------
-
-" python 3.7 syntax for all
-let g:python_highlight_all = 1
+let g:airline_theme = 'angr'
 
 " EasyMotion ------------------
 map gs <plug>(easymotion-prefix)
-
-" Limelight -------------------------------
-let g:limelight_conceal_ctermfg = 'darkgray'
-
-" Which-key --------------------
-" nnoremap <silent> <space>      :<c-u>WhichKey '<space>'<cr>
-" nnoremap <silent> <leader>      :<c-u>WhichKey '<leader>'<cr>
-
-" Startify ---------------------
-let g:startify_custom_header = [
-         \"    =================     ===============     ===============   ========  ========",
-         \"    \\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . . //",
-         \"    ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\\/ . . .||",
-         \"    || . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||",
-         \"    ||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||",
-         \"    || . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\\ . . . . ||",
-         \"    ||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\\_ . .|. .||",
-         \"    || . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\\ `-_/| . ||",
-         \"    ||_-' ||  .|/    || ||    \\|.  || `-_|| ||_-' ||  .|/    || ||   | \\  / |-_.||",
-         \"    ||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \\  / |  `||",
-         \"    ||    `'         || ||         `'    || ||    `'         || ||   | \\  / |   ||",
-         \"    ||            .===' `===.         .==='.`===.         .===' /==. |  \\/  |   ||",
-         \"    ||         .=='   \\_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \\/  |   ||",
-         \"    ||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \\/  |   ||",
-         \"    ||   .=='    _-'          '-__\\._-'         '-_./__-'         `' |. /|  |   ||",
-         \"    ||.=='    _-'                                                     `' |  /==.||",
-         \"    =='    _-'                           V I M                            \\/   `==",
-         \"    \\   _-'                                                                `-_   /",
-         \"    `''                                                                      ``'",
-         \]
-" }}}
-
-" OS specifics {{{
-if has('osx')
-    let g:airline_theme = 'base16color'
-else
-    let g:airline_theme = 'angr'
-endif
-" }}}

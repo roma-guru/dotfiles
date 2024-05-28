@@ -10,7 +10,9 @@
   autosetuprebase = always
 
 [color]
-  ui = auto
+    ui = auto
+[pull]
+	rebase = true
 
 [rerere]
 	enabled = true
@@ -40,7 +42,3 @@
   pushInsteadOf = "http://gist.github.com/"
   pushInsteadOf = "gist:"
   insteadOf = "gist:"
-[gui]
-	recentrepo = /Users/roma/Desktop/fzf
-[pull]
-	rebase = true
