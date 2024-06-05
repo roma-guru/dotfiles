@@ -34,6 +34,10 @@
   pushInsteadOf = "my:"
   insteadOf = "my:"
 
+[url "git@github.com:Artiomio/"]
+  pushInsteadOf = "art:"
+  insteadOf = "art:"
+
 [url "git@github.com:PacktPublishing"]
   insteadOf = "packt:"
 

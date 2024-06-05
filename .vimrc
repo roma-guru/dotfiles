@@ -208,7 +208,7 @@ autocmd WinLeave :w<cr>
 
 vnoremap <leader>y "+y
 
-let g:airline_theme = 'base16color'
+let g:airline_theme = 'base16_mocha'
 command! AirlineThemes call fzf#run({
   \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
   \               "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
