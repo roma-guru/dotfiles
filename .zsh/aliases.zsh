@@ -82,9 +82,13 @@ func ipinfo() {
 }
 
 # Python
+for v in {9..12}; do
+   alias 3.$v="python3.$v"
+done
+alias 3.9='python3.9'
 alias py='python3'
 alias pypy='pypy3'
-alias ipy='ipython'
+alias ipy='ipython3'
 alias mkvenv="py -m venv .venv"
 alias act=". .venv/bin/activate"
 alias deact='deactivate'
@@ -95,6 +99,9 @@ def pypkg() {
     mkdir $1 && touch $1/__init__.py
 }
 alias pyignore='wget https://github.com/github/gitignore/raw/main/Python.gitignore -O .gitignore'
+
+alias conda-act="conda activate"
+alias conda-react="conda reactivate"
 
 # Swift
 alias sw='swift repl'
@@ -107,20 +114,12 @@ alias doc="docker"
 alias docomp="docker compose"
 alias pod="podman"
 
-# Anaconda
-def conda-act() {
-    eval $(conda shell.zsh activate $1)
-}
-def conda-deact() {
-    eval $(conda shell.zsh deactivate)
-}
-
 # Pip
 alias pip=pip3
-alias pip3="py -m pip"
+alias pip3="python3 -m pip"
 alias pipi="pip3 install"
 alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
-alias pipi-req="pip3 install -r requirements.txt"
+alias pipi-req="pip3 install -r require*.txt"
 alias pipi-dev="pip3 install -e ."
 alias pipi-test="pip3 install --extra-index-url https://testpypi.python.org/pypi"
 alias piprm="pip3 uninstall"
@@ -170,11 +169,13 @@ hash -d postgres-data="/opt/homebrew/var/postgres"
 hash -d homebrew="/opt/homebrew/Cellar"
 hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
 hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
+hash -d conda-envs="/opt/homebrew/Caskroom/miniconda/base/envs"
 
 # GLOBAL aliases
 alias -g L="|less"
 alias -g NULL=">/dev/null 2>&1"
 alias -g G="|grep"
+alias -g PB="|pbcopy"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'
