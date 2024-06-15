@@ -5,10 +5,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 # alias +=?
 # alias @=?
+alias b='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage'
 alias d='dirs -v'
 alias l='exa -lh'
-alias j='ranger --choosedir=$HOME/.ranger-dir && cd $(cat $HOME/.ranger-dir)'
-alias h="history -i 1"
+alias h='history -i 1'
+alias j='jobs -l'
+alias x='startxfce4'
 
 alias func=function
 alias def=function
@@ -28,6 +30,7 @@ alias mkdir='mkdir -pv'
 alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
+alias shut='shutdown now'
 
 alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
 alias nv="nvim"
@@ -121,6 +124,7 @@ alias gd="git diff"
 # Dir aliases
 hash -d desk="$HOME/Desktop"
 hash -d downs="$HOME/Downloads"
+hash -d docs="$HOME/Documents"
 
 hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
@@ -141,3 +145,7 @@ alias http="nog http"
 def transfer() {
     if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
 }
+
+# wormhole
+alias whs="wormhole send"
+alias whr="wormhole receive"

@@ -178,6 +178,7 @@ autocmd WinLeave :w<cr>
 " universal copypaste
 vnoremap <leader>y "+y
 
+colorscheme slate
 let g:airline_theme = 'base16color'
 command! AirlineThemes call fzf#run({
   \ 'source':  ["random"] + map(split(globpath(&rtp, 'autoload/airline/themes/*.vim'), "\n"),
