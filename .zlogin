@@ -2,7 +2,7 @@
 case $TERM_PROGRAM in
     iTerm.app)
         # Weather
-        wttr
+        wttr.in
 
         # Shell integration
         test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

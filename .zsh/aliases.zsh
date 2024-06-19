@@ -85,7 +85,6 @@ func ipinfo() {
 for v in {9..12}; do
    alias 3.$v="python3.$v"
 done
-alias 3.9='python3.9'
 alias py='python3'
 alias pypy='pypy3'
 alias ipy='ipython3'
@@ -116,7 +115,7 @@ alias pod="podman"
 
 # Pip
 alias pip=pip3
-alias pip3="python3 -m pip"
+alias pip3="py -m pip"
 alias pipi="pip3 install"
 alias pipi-test="pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple"
 alias pipi-req="pip3 install -r require*.txt"
@@ -176,6 +175,7 @@ alias -g L="|less"
 alias -g NULL=">/dev/null 2>&1"
 alias -g G="|grep"
 alias -g PB="|pbcopy"
+alias -g TB="|nc termbin.com 9999"
 
 # OS specifics
 alias ypwd='pwd|pbcopy'
@@ -202,7 +202,10 @@ def dotenv() {
 alias whs="wormhole send"
 alias whr="wormhole receive"
 
-# wttr.in
-func wttr() {
+# nitty web services
+func wttr.in() {
     it2setkeylabel set status "$(curl wttr.in/$1\?format=3)"
+}
+func file.io() {
+    curl -X POST -F "file=@$1" https://file.io | jq .link
 }

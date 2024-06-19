@@ -1,6 +1,7 @@
 declare -U path
 
 # homebrew fix
+export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_PREFIX=/opt/homebrew
 path=( /opt/homebrew/bin $path )
 
