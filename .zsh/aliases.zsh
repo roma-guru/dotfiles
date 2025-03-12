@@ -32,7 +32,7 @@ alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
 alias shut='shutdown now'
-alias batt='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage'
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage | cut -f 2 -d : | xargs'
 
 alias v="vim"
 alias nv="nvim"
