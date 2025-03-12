@@ -5,12 +5,13 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 # alias +=?
 # alias @=?
-alias b='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage'
 alias d='dirs -v'
 alias l='exa -lh'
 alias h='history -i 1'
 alias j='jobs -l'
+
 alias x='startxfce4'
+alias y="tmux new-session \; split-window -h \; split-window -v \; send-keys 'htop' C-m \; select-pane -L"
 
 alias func=function
 alias def=function
@@ -31,18 +32,18 @@ alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
 alias shut='shutdown now'
+alias batt='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage'
 
-alias e="emacsclient -c -a emacs" && alias v="vim" # make peace not war
+alias v="vim"
 alias nv="nvim"
 alias m="micro"; alias n="nano"
-alias svim="sudo vim"
+alias sv="sudo vim"
 alias vi="vim -u NONE"
 alias rr="r -2"
 alias rrr="r -3"
 alias killj="kill %1"
 
 alias vimzsh="vim ~/.zsh"
-alias vimwork='file=work && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimtw='file=tweaks && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
 alias vimpath='file=path && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -130,11 +131,6 @@ hash -d zsh="$HOME/.zsh"
 hash -d local-bin="$HOME/.local/bin"
 hash -d vim-plug="$HOME/.vim/plugged/"
 hash -d go-home="$HOME/go"
-hash -d postgres-data="/opt/homebrew/var/postgres"
-hash -d homebrew="/opt/homebrew/Cellar"
-hash -d homebrew-core="/opt/homebrew/Library/Taps/homebrew/homebrew-core"
-hash -d homebrew-cask="/opt/homebrew/Library/Taps/homebrew/homebrew-cask"
-hash -d python-packages="/opt/homebrew/lib/python3.9/site-packages"
 
 # URLs w/o quoting!
 alias curl="nog curl"

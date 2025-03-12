@@ -13,5 +13,4 @@ for f in ~/.zsh/*.zsh; source $f;
 
 if [ -z "$DISPLAY" ]; then
     setfont gr737d-8x16
-    tmux
 fi
