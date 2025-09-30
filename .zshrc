@@ -42,3 +42,8 @@ zplug load
 for f (~/.zsh/*.zsh) {
     source $f
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/roma/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -17,6 +17,7 @@ alias j='jobs'
 alias h="history -i 1"
 alias p=print
 alias pf=printf
+alias o=open
 
 alias func=function
 alias def=function
@@ -189,6 +190,7 @@ hash -d desk="$HOME/Desktop"
 hash -d docs="$HOME/Documents"
 hash -d downs="$HOME/Downloads"
 hash -d music="$HOME/Music"
+hash -d pub="$HOME/Public"
 
 hash -d zsh="$HOME/.zsh"
 hash -d vim="$HOME/.vim"
@@ -259,4 +261,7 @@ func mp3_cover() {
     else
         ffmpeg -i $1 -i $2 -map 0:0 -map 1:0 -c copy -id3v2_version 3 $3
     fi
+}
+func ogg2wav() {
+    ffmpeg -i $1 -
 }
