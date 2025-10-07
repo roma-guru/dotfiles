@@ -6,15 +6,27 @@ setopt autocd autopushd extendedglob chase_links noshare_history
 autoload -U zmv zcalc
 autoload -Uz promptinit compinit
 
-bindkey -v
-bindkey "^z" push-line-or-edit
-bindkey -M vicmd "^t" transpose-words
-bindkey -M vicmd "K" run-help
-
 export REPORTTIME=3
 export KEYTIMEOUT=0
 export DIRSTACKSIZE=10
 export EDITOR=vim
+
+bindkey -v
+bindkey -M vicmd "^t" transpose-words
+bindkey -M vicmd "M" run-help
+#bindkey -M vicmd "H" ...
+#...
+
+bindkey "^z" push-line-or-edit
+bindkey "^_" ...
+#bindkey "^t" ...
+#bindkey "^y" ...
+#bindkey "^a" ...
+#bindkey "^s" ...
+#bindkey "^k" ...
+#bindkey "^x" ...
+#bindkey "^b" ...
+#bindkey "^n" ...
 
 zstyle ':completion:*' rehash true
 func chpwd() { l }
@@ -26,7 +38,7 @@ bindkey "^v" edit-command-line
 
 # FZF power
 source ~/.zsh/fzf-bindings
-source ~/.zsh/fzf-completion
+# source ~/.zsh/fzf-completion
 export FZF_DEFAULT_OPTS="--height=25"
 export FZF_DEFAULT_COMMAND='fd --type f'
 

@@ -62,7 +62,7 @@ fzf-cd-widget() {
   return $ret
 }
 zle     -N    fzf-cd-widget
-bindkey '^E' fzf-cd-widget
+bindkey '^P' fzf-cd-widget
 
 # Paste the selected command from history into the command line
 fzf-history-widget() {
@@ -83,6 +83,19 @@ fzf-history-widget() {
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 
+# Jobs management
+fzf-jobs-widget() {
+  local cmd="jobs"
+  local job="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m | cut -f 2)"
+  eval %$job
+  unset dir # ensure this doesn't end up appearing in prompt expansion
+  local ret=$?
+  zle fzf-redraw-prompt
+  return $ret
+}
+zle     -N    fzf-jobs-widget
+bindkey '^J' fzf-jobs-widget
+
 # CD into the dir stack
 fzf-dirs-widget() {
   local cmd="dirs -v"
@@ -94,7 +107,7 @@ fzf-dirs-widget() {
   return $ret
 }
 zle     -N    fzf-dirs-widget
-bindkey '^S' fzf-dirs-widget
+bindkey '^\\' fzf-dirs-widget
 
 # Git bindings (https://junegunn.kr/2016/07/fzf-git/)
 . ~/.zsh/git-functions

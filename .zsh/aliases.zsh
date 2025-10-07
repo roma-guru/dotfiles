@@ -3,20 +3,27 @@ alias _='sudo'
 alias su='_ bash'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias rr="r -2"
+alias rrr="r -3"
+
 # alias +=?
-# alias @=?
-alias d='dirs -v'
+alias @='bat'
 alias l='exa -lh'
+
 alias h='history -i 1'
 alias j='jobs -l'
+#alias a=...
+#alias b=...
+#alias c=...
+#alias d='docker'
+#...
 
 alias x='startxfce4'
-alias y="tmux new-session \; split-window -h \; split-window -v \; send-keys 'htop' C-m \; select-pane -L"
+alias y="tmux new-session \; split-window -h \; send-keys 'htop' C-m \; split-window -v \;  select-pane -L"
 
 alias func=function
 alias def=function
 
-alias le='bat'
 alias la='l -a'
 alias cp='cp -R'
 alias rm='rm -r'
@@ -26,22 +33,25 @@ alias df='duf'
 alias nog='noglob'
 alias loc='noglob locate'
 alias noc='nocorrect'
+alias killj="kill %1"
 alias mmv='noglob zmv -W'
-alias mkdir='mkdir -pv'
+alias mkdir='mkdir -pv '
+func mkd() {
+    mkdir $1 && cd $1
+}
 alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
 alias shut='shutdown now'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage | cut -f 2 -d : | xargs'
+alias wifi='iwconfig 2>/dev/null | grep wlan0 | cut -f 9 -d " "'
+alias apt='pamac'
+alias rng='ranger'
 
 alias v="vim"
-alias nv="nvim"
-alias m="micro"; alias n="nano"
+alias n="nano"
 alias sv="sudo vim"
 alias vi="vim -u NONE"
-alias rr="r -2"
-alias rrr="r -3"
-alias killj="kill %1"
 
 alias vimzsh="vim ~/.zsh"
 alias vimali='file=aliases && vim ~/.zsh/$file.zsh && . ~/.zsh/$file.zsh'
@@ -62,7 +72,7 @@ alias hgrep='history 1 | grep'
 alias lgrep='!! | grep'
 
 # IP info
-alias myip='ifconfig en0 | grep "inet\s" | cut -f 2 -d " "'
+alias myip='ip addr'
 alias myip-ext='curl ifconfig.pro'
 func ipinfo() {
     curl ipinfo.io/$1

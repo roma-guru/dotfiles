@@ -4,8 +4,9 @@ promptinit && prompt fade
 compinit
 
 # wifi from the start
-if [ -z "$(nmcli conn show --active | grep CYTA)" ]; then
-    nmcli conn up CYTA
+conn_name="TP-Link_8514"
+if [ -z "$(nmcli conn show --active | grep $conn_name)" ]; then
+    nmcli conn up $conn_name
 fi
 
 # Local plugins
