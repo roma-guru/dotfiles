@@ -7,7 +7,7 @@ alias rr="r -2"
 alias rrr="r -3"
 
 # alias +=?
-alias @='bat'
+alias @='cmd bat'
 alias l='exa -lh'
 
 alias h='history -i 1'
@@ -33,6 +33,7 @@ alias df='duf'
 alias nog='noglob'
 alias loc='noglob locate'
 alias noc='nocorrect'
+alias cmd='command'
 alias killj="kill %1"
 alias mmv='noglob zmv -W'
 alias mkdir='mkdir -pv '
@@ -43,7 +44,7 @@ alias mkx='chmod a+x'
 alias find='noglob find'
 alias arc='archive'
 alias shut='shutdown now'
-alias batt='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage | cut -f 2 -d : | xargs'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_cw2015_battery | grep percentage | cut -f 2 -d : | xargs'
 alias wifi='iwconfig 2>/dev/null | grep wlan0 | cut -f 9 -d " "'
 alias apt='pamac'
 alias rng='ranger'

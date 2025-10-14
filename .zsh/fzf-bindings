@@ -86,8 +86,8 @@ bindkey '^R' fzf-history-widget
 # Jobs management
 fzf-jobs-widget() {
   local cmd="jobs"
-  local job="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m | cut -f 2)"
-  eval %$job
+  local job="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse $FZF_DEFAULT_OPTS $FZF_ALT_C_OPTS" $(__fzfcmd) +m | awk ...)"
+  eval "%$job"
   unset dir # ensure this doesn't end up appearing in prompt expansion
   local ret=$?
   zle fzf-redraw-prompt
